@@ -9,6 +9,8 @@ import tykkipeli.model.PeliObjekti;
 
 public class ObjektienPiirrin extends JPanel{
 
+    
+    //TODO: nämä pois täältä, esim Maailma luokka
     List<PeliObjekti> objektit = new ArrayList();
     
     @Override
