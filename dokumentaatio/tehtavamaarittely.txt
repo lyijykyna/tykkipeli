@@ -1,0 +1,7 @@
+Aihe: tykkipeli
+
+Toteutetaan peli, jossa on tarkoitus tuhota omalla tykillä vastustajan tykki.
+-Tykit sijaitsevat maastossa, jossa on kumpuja ja jotka ovat yleensä tykkien välissä. Maailmassa on painovoima, joka vaikuttaa peliobjekteihin
+-Tykkien ammukset noudattavat yksinkertaista vinon heittoliikkeen fysiikkaa, jonka mukaan lasketaan ammuksen lentorata tykin korokulman ja "tehon" mukaan.
+-Pelaaja, joka osuu tykillään ammutulla ammuksella toisen pelaajan tykkiin tuhoten tykin, voittaa pelin.
+
