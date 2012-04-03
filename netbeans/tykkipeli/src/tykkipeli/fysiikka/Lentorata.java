@@ -5,14 +5,14 @@ import tykkipeli.model.Ammus;
 
 
 public class Lentorata {
-    private static float PUTOAMISKIIHTYVYYS = 10;
-    private static float aikaAskel = 1;
+    private static double PUTOAMISKIIHTYVYYS = 10;
+    private static double aikaAskel = 0.01;
     private int x0;
     private int y0;
     private int v0x;
     private int v0y;
     private int t0;
-    private int dt;
+    private double dt;
 
     public Lentorata(int x0, int y0, int v0x, int v0y, int t0) {
         this.x0 = x0;
@@ -24,24 +24,24 @@ public class Lentorata {
 
     
     
-    public static float getPUTOAMISKIIHTYVYYS() {
+    public static double getPUTOAMISKIIHTYVYYS() {
         return PUTOAMISKIIHTYVYYS;
     }
 
-    public static void setPUTOAMISKIIHTYVYYS(float PUTOAMISKIIHTYVYYS) {
+    public static void setPUTOAMISKIIHTYVYYS(double PUTOAMISKIIHTYVYYS) {
         Lentorata.PUTOAMISKIIHTYVYYS = PUTOAMISKIIHTYVYYS;
     }
 
-    public static float getAikaAskel() {
+    public static double getAikaAskel() {
         return aikaAskel;
     }
 
-    public static void setAikaAskel(float aikaAskel) {
+    public static void setAikaAskel(double aikaAskel) {
         Lentorata.aikaAskel = aikaAskel;
     }
 
     
-    public int getDt() {
+    public double getDt() {
         return dt;
     }
 
