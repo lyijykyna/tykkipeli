@@ -6,17 +6,8 @@ package tykkipeli.model;
  */
 public class Pelaaja {
     
-    /**
-     * Pelaajan nimi
-     */
     private String nimi;
-    /**
-     * Pelaajan tykki
-     */
     private Tykki tykki;
-    /**
-     * Onko pelaaja vielä mukana pelissä
-     */
     private boolean pelissa;
 
     /**
