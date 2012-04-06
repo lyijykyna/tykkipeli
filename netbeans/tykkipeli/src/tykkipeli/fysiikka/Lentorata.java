@@ -6,7 +6,7 @@ import tykkipeli.model.Ammus;
 
 public class Lentorata {
     private static double PUTOAMISKIIHTYVYYS = 10;
-    private static double aikaAskel = 0.01;
+    private static double aikaAskel = 0.1; //0.1 on melko hyvä 640x480 maailmalle
     private int x0;
     private int y0;
     private int v0x;
