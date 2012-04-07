@@ -9,12 +9,12 @@ public class Lentorata {
     private static double aikaAskel = 0.1; //0.1 on melko hyvä 640x480 maailmalle
     private int x0;
     private int y0;
-    private int v0x;
-    private int v0y;
+    private double v0x;
+    private double v0y;
     private int t0;
     private double dt;
 
-    public Lentorata(int x0, int y0, int v0x, int v0y, int t0) {
+    public Lentorata(int x0, int y0, double v0x, double v0y, int t0) {
         this.x0 = x0;
         this.y0 = y0;
         this.v0x = v0x;
@@ -57,11 +57,11 @@ public class Lentorata {
         this.t0 = t0;
     }
 
-    public int getV0x() {
+    public double getV0x() {
         return v0x;
     }
 
-    public void setV0x(int v0) {
+    public void setV0x(double v0) {
         this.v0x = v0;
     }
 
@@ -69,11 +69,11 @@ public class Lentorata {
         return x0;
     }
 
-    public int getV0y() {
+    public double getV0y() {
         return v0y;
     }
 
-    public void setV0y(int v0y) {
+    public void setV0y(double v0y) {
         this.v0y = v0y;
     }
 

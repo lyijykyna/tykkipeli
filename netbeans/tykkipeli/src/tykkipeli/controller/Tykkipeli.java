@@ -4,6 +4,8 @@ import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import tykkipeli.fysiikka.Lentorata;
+import tykkipeli.model.Ammus;
 import tykkipeli.model.Pelaaja;
 
 /**
@@ -65,5 +67,12 @@ public class Tykkipeli {
 	    min = max;
 	    max += this.peliMaailma.getLEVEYS()/this.pelaajienLukumaara;
 	}
+    }
+    
+    public Lentorata pelaajaAmpuu(Pelaaja pelaaja) {
+	Point alkupsijainti = pelaaja.getTykki().getSijainti();
+	Ammus ammuttu = new Ammus(alkupsijainti);
+	Lentorata rata = new Lentorata(alkupsijainti.x, alkupsijainti.y, pelaaja.getTeho()*Math.cos(pelaaja.getKoro()), pelaaja.getTeho()*Math.sin(pelaaja.getKoro()), 0);
+	return rata;
     }
 }
