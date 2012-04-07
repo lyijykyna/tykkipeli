@@ -30,7 +30,24 @@ public class Main {
 	    System.out.println("Sijoitettiin pelaajan tykki pisteeseen"+tykkipeli.getPelaajat().get(i).getTykki().getSijainti());
 	}
 	System.out.println("Aloitetaan peli");
+	Pelaaja p1 = tykkipeli.getPelaajat().get(0);
+	Pelaaja p2 = tykkipeli.getPelaajat().get(1);
+	int l=0;
+	while(p1.isPelissa() && p2.isPelissa()) {
 	    System.out.println("Pelaaja1 ampuu tykillä");
+	    p1.ammu();
+	    System.out.println(p2.getNimi()+" ampuu");
+	    p2.ammu();
+	    if(l==3)
+		p2.poistaPelista();
+	    l++;
+	}
+	if(p1.isPelissa() && !p2.isPelissa())
+	    System.out.println(p1.getNimi()+" voitti pelin!");
+	else if(p2.isPelissa() && !p1.isPelissa())
+	    System.out.println(p2.getNimi()+" voitti pelin!");
+	else
+	    System.out.println("Tasapeli!");
 	System.out.println("Lopetetaan peli");
 	System.out.println("Lopetetaan ohjelma");
     }
