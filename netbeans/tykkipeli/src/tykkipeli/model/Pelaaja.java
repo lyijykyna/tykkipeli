@@ -9,6 +9,8 @@ public class Pelaaja {
     private String nimi;
     private Tykki tykki;
     private boolean pelissa;
+    private int teho;
+    private double koro;
 
     /**
      * Parametrillinen konstruktori Pelaaja-luokalle
@@ -23,8 +25,9 @@ public class Pelaaja {
      * Metodi, jolla pelaaja ampuu tykillään
      */
     public void ammu() {
-	if(tykki != null)
+	if(tykki != null) {
 	    System.out.println("PUM!");
+	}
 	else
 	    System.out.println("Pelaajalla ei ole tykkiä!");
     }
@@ -84,5 +87,22 @@ public class Pelaaja {
     public void poistaPelista() {
 	this.setPelissa(false);
     }
+
+    public int getTeho() {
+	return teho;
+    }
+
+    public void setTeho(int teho) {
+	this.teho = teho;
+    }
+
+    public double getKoro() {
+	return koro;
+    }
+
+    public void setKoro(double koro) {
+	this.koro = koro;
+    }
+    
     
 }

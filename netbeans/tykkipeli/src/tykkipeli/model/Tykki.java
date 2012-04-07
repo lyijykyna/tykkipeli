@@ -8,9 +8,6 @@ import java.awt.Point;
  */
 public class Tykki extends PeliObjekti {
     
-    //TODO: nämä kaikki konstruktorit varmaan kannattaa siirtää yläluokkaan
-    //	    ja ammus-luokasta kanssa
-    
     /**
      * Oletuskonstruktori tykki-luokalle.
      * Luo tykin pisteeseen (0,0) pelimaailman koordinaateissa
