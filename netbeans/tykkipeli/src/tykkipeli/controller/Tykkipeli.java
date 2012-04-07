@@ -1,7 +1,9 @@
 package tykkipeli.controller;
 
+import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import tykkipeli.model.Pelaaja;
 
 /**
@@ -51,4 +53,17 @@ public class Tykkipeli {
 	this.pelaajat.add(pelaaja);
     }
     
+    public void arvoPelaajienPaikat() {
+	int x = 0;
+	int y = 0;
+	int min = 0;
+	int max = this.peliMaailma.getLEVEYS()/this.pelaajienLukumaara;
+	Random random = new Random();
+	for(Pelaaja p : this.pelaajat) {
+	    x = random.nextInt(max-min)+min;
+	    p.getTykki().setSijainti(new Point(x,y));
+	    min = max;
+	    max += this.peliMaailma.getLEVEYS()/this.pelaajienLukumaara;
+	}
+    }
 }
