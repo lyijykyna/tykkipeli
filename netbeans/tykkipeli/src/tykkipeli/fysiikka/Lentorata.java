@@ -111,7 +111,7 @@ public class Lentorata {
         //y
         //System.out.println(this.y0+this.v0y*(this.t0+this.dt)-0.5*PUTOAMISKIIHTYVYYS*(this.t0+this.dt)*(this.t0+this.dt));
         uusiPiste.y = (int) (this.y0+this.v0y*(this.t0+this.dt)-0.5*PUTOAMISKIIHTYVYYS*(this.t0+this.dt)*(this.t0+this.dt));
-        System.out.println("Aika-askel: "+this.dt);
+        //System.out.println("Aika-askel: "+this.dt);
         dt+=aikaAskel;
         return uusiPiste;
     }

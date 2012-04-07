@@ -1,5 +1,6 @@
 package tykkipeli;
 
+import java.util.Random;
 import tykkipeli.controller.Maailma;
 import tykkipeli.controller.Tykkipeli;
 import tykkipeli.fysiikka.Lentorata;
@@ -36,15 +37,18 @@ public class Main {
 	int l=0;
 	while(p1.isPelissa() && p2.isPelissa()) {
 	    System.out.println("Pelaaja1 ampuu tykillä");
-	    Lentorata rata = tykkipeli.pelaajaAmpuu(p1);
+	    //TODO: pelaajaAmpuu metodiin teho ja koro ja siellä metodissa pelaajaluokan päivitys näillä arvoilla
+	    Random random = new Random();
+	    Lentorata rata = tykkipeli.pelaajaAmpuu(p1,random.nextInt(90),random.nextInt(500));
 	    int iii = 0;
-	    while(!tykkipeli.getPeliMaailma().tormaysTarkistus(rata.getAmmus(), p2.getTykki()) && iii<50) {
+	    while(!tykkipeli.getPeliMaailma().tormaysTarkistus(rata.getAmmus(), p2.getTykki()) && iii<500) {
 		rata.iteroiRata(rata.getAmmus());
 		iii++;
 	    }
-	    System.out.println(p2.getNimi()+" ampuu");
-	    p2.ammu();
-	    if(l==3)
+	    System.out.println("Etäisyys maaliin: "+rata.getAmmus().getSijainti().distance(p2.getTykki().getSijainti()));
+	    //System.out.println(p2.getNimi()+" ampuu");
+	    //p2.ammu();
+	    if(l==30)
 		p2.poistaPelista();
 	    l++;
 	}
