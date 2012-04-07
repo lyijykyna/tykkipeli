@@ -38,8 +38,10 @@ public class Maailma {
     }
     
     public boolean tormaysTarkistus(PeliObjekti o1, PeliObjekti o2) {
-	if(o1.getSijainti().distance(o2.getSijainti()) < 0.1)
+	if(o1.getSijainti().distance(o2.getSijainti()) < 0.1) {
+	    System.out.println("OSUMA!");
 	    return true;
+	}
 	else
 	    return false;
     }
