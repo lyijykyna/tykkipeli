@@ -13,6 +13,7 @@ public class Lentorata {
     private double v0y;
     private int t0;
     private double dt;
+    private Ammus ammus;
 
     public Lentorata(int x0, int y0, double v0x, double v0y, int t0) {
         this.x0 = x0;
@@ -90,8 +91,17 @@ public class Lentorata {
     public void setY0(int y0) {
         this.y0 = y0;
     }
+
+    public Ammus getAmmus() {
+	return ammus;
+    }
+
+    public void setAmmus(Ammus ammus) {
+	this.ammus = ammus;
+    }
     
     public Point iteroiRata(Ammus ammus) {
+	this.ammus = ammus;
         Point uusiPiste = new Point();
         //r(t)=(x_0+v_0*x*t)i+(y_0+v_0y*t-½*g*t^2)j
         //uusi t = t0+deltat

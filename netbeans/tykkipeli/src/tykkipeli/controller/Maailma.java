@@ -37,5 +37,10 @@ public class Maailma {
 	Maailma.LEVEYS = LEVEYS;
     }
     
-    
+    public boolean tormaysTarkistus(PeliObjekti o1, PeliObjekti o2) {
+	if(o1.getSijainti().distance(o2.getSijainti()) < 0.1)
+	    return true;
+	else
+	    return false;
+    }
 }
