@@ -1,9 +1,8 @@
 package tykkipeli;
 
-import java.awt.Point;
-import java.util.Random;
 import tykkipeli.controller.Maailma;
 import tykkipeli.controller.Tykkipeli;
+import tykkipeli.fysiikka.Lentorata;
 import tykkipeli.model.Pelaaja;
 import tykkipeli.model.Tykki;
 
@@ -31,11 +30,18 @@ public class Main {
 	}
 	System.out.println("Aloitetaan peli");
 	Pelaaja p1 = tykkipeli.getPelaajat().get(0);
+	p1.setKoro(45);
+	p1.setTeho(10);
 	Pelaaja p2 = tykkipeli.getPelaajat().get(1);
 	int l=0;
 	while(p1.isPelissa() && p2.isPelissa()) {
 	    System.out.println("Pelaaja1 ampuu tykillä");
-	    p1.ammu();
+	    Lentorata rata = tykkipeli.pelaajaAmpuu(p1);
+	    int iii = 0;
+	    while(!tykkipeli.getPeliMaailma().tormaysTarkistus(rata.getAmmus(), p2.getTykki()) && iii<50) {
+		rata.iteroiRata(rata.getAmmus());
+		iii++;
+	    }
 	    System.out.println(p2.getNimi()+" ampuu");
 	    p2.ammu();
 	    if(l==3)
