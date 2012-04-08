@@ -28,6 +28,7 @@ public class Main {
 	    System.out.println("Lisättiin pelaajalle tykki");
 	    tykkipeli.arvoPelaajienPaikat();
 	    System.out.println("Sijoitettiin pelaajan tykki pisteeseen"+tykkipeli.getPelaajat().get(i).getTykki().getSijainti());
+	    System.out.println("---------------------------------------------");
 	}
 	System.out.println("Aloitetaan peli");
 	Pelaaja p1 = tykkipeli.getPelaajat().get(0);
@@ -38,14 +39,22 @@ public class Main {
 	while(p1.isPelissa() && p2.isPelissa()) {
 	    System.out.println("Pelaaja1 ampuu tykillä");
 	    //TODO: pelaajaAmpuu metodiin teho ja koro ja siellä metodissa pelaajaluokan päivitys näillä arvoilla
-	    Random random = new Random();
-	    Lentorata rata = tykkipeli.pelaajaAmpuu(p1,random.nextInt(90),random.nextInt(500));
+	    Random random = new Random(l*3);
+	    int nro1 = random.nextInt(90);
+	    int nro2 = random.nextInt(100);
+	    Lentorata rata = tykkipeli.pelaajaAmpuu(p1,nro1,nro2);
 	    int iii = 0;
-	    while(!tykkipeli.getPeliMaailma().tormaysTarkistus(rata.getAmmus(), p2.getTykki()) && iii<500) {
-		rata.iteroiRata(rata.getAmmus());
+	    while(!tykkipeli.getPeliMaailma().tormaysTarkistus(rata.getAmmus(), p2.getTykki()) && iii<500 && rata.getAmmus().getSijainti().y >= 0) {
+		rata.getAmmus().setSijainti(rata.iteroiRata(rata.getAmmus()));
 		iii++;
 	    }
 	    System.out.println("Etäisyys maaliin: "+rata.getAmmus().getSijainti().distance(p2.getTykki().getSijainti()));
+	    if(rata.getAmmus().getSijainti().x > p2.getTykki().getSijainti().x)
+		System.out.println("YLI!");
+	    else
+		System.out.println("JÄI VAJAAKSI!");
+	    System.out.println("Ammuksen sijainti: "+rata.getAmmus().getSijainti());
+	    System.out.println("-----------------------------------------------");
 	    //System.out.println(p2.getNimi()+" ampuu");
 	    //p2.ammu();
 	    if(l==30)
@@ -60,5 +69,9 @@ public class Main {
 	    System.out.println("Tasapeli!");
 	System.out.println("Lopetetaan peli");
 	System.out.println("Lopetetaan ohjelma");
+	Pelaaja testi = new Pelaaja("testi");
+	testi.setKoro(90);
+	System.out.println(testi.getKoroRadiaaneina());
+	System.out.println(Math.PI/2);
     }
 }
