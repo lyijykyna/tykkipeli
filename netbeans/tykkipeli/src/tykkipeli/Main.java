@@ -41,13 +41,16 @@ public class Main {
 	    //TODO: pelaajaAmpuu metodiin teho ja koro ja siellä metodissa pelaajaluokan päivitys näillä arvoilla
 	    Random random = new Random(l*3);
 	    int nro1 = random.nextInt(90);
-	    int nro2 = random.nextInt(100);
+	    int nro2 = random.nextInt(100)+20;
 	    Lentorata rata = tykkipeli.pelaajaAmpuu(p1,nro1,nro2);
 	    int iii = 0;
 	    while(!tykkipeli.getPeliMaailma().tormaysTarkistus(rata.getAmmus(), p2.getTykki()) && iii<500 && rata.getAmmus().getSijainti().y >= 0) {
 		rata.getAmmus().setSijainti(rata.iteroiRata(rata.getAmmus()));
 		iii++;
 	    }
+	    System.out.println("Rataa iteroitiin "+iii+" kertaa");
+	    System.out.println("Pelaajan1 ja -2 välinen etäisyys: "+p1.getTykki().getSijainti().distance(p2.getTykki().getSijainti()));
+	    System.out.println("Ammus lensi "+p1.getTykki().getSijainti().distance(rata.getAmmus().getSijainti()));
 	    System.out.println("Etäisyys maaliin: "+rata.getAmmus().getSijainti().distance(p2.getTykki().getSijainti()));
 	    if(rata.getAmmus().getSijainti().x > p2.getTykki().getSijainti().x)
 		System.out.println("YLI!");
