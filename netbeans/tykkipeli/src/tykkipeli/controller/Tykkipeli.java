@@ -74,7 +74,9 @@ public class Tykkipeli {
 	pelaaja.setTeho(teho);
 	Point alkupsijainti = pelaaja.getTykki().getSijainti();
 	Ammus ammuttu = new Ammus(alkupsijainti);
-	Lentorata rata = new Lentorata(alkupsijainti.x, alkupsijainti.y, pelaaja.getTeho()*Math.cos(pelaaja.getKoro()), pelaaja.getTeho()*Math.sin(pelaaja.getKoro()), 0);
+	Lentorata rata = new Lentorata(alkupsijainti.x, alkupsijainti.y, pelaaja.getTeho()*Math.cos(pelaaja.getKoroRadiaaneina()), pelaaja.getTeho()*Math.sin(pelaaja.getKoroRadiaaneina()), 0);
+	System.out.println("Ammutaan korolla "+ koro+"° ja teholla "+teho);
+	System.out.println("Ammutaan alkunopeudella: "+pelaaja.getTeho()*Math.cos(pelaaja.getKoroRadiaaneina())+"i + "+pelaaja.getTeho()*Math.sin(pelaaja.getKoroRadiaaneina())+"j");
 	rata.setAmmus(ammuttu);
 	return rata;
     }

@@ -99,6 +99,10 @@ public class Pelaaja {
     public double getKoro() {
 	return koro;
     }
+    
+    public double getKoroRadiaaneina() {
+	return (koro/180)*Math.PI;
+    }
 
     public void setKoro(double koro) {
 	this.koro = koro;
