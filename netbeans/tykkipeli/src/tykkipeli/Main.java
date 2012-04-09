@@ -17,7 +17,7 @@ public class Main {
      */
     public static void main(String[] args) {
 	
-	Tykkipeli tykkipeli = new Tykkipeli(2);
+	Tykkipeli tykkipeli = new Tykkipeli();
 	tykkipeli.setPeliMaailma(new Maailma());
 	System.out.println("Aloitetaan ohjelma");
 	//lisätään pelaajat

@@ -4,11 +4,13 @@
  */
 package tykkipeli.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.junit.*;
 import static org.junit.Assert.*;
 import tykkipeli.fysiikka.Lentorata;
 import tykkipeli.model.Pelaaja;
+import tykkipeli.model.Tykki;
 
 /**
  *
@@ -39,28 +41,38 @@ public class TykkipeliTest {
      * Test of getPelaajienLukumaara method, of class Tykkipeli.
      */
     @Test
-    public void testGetPelaajienLukumaara() {
+    public void testGetPelaajienLukumaaraTyhja() {
 	System.out.println("getPelaajienLukumaara");
 	Tykkipeli instance = new Tykkipeli();
 	int expResult = 0;
 	int result = instance.getPelaajienLukumaara();
 	assertEquals(expResult, result);
-	// TODO review the generated test code and remove the default call to fail.
-	fail("The test case is a prototype.");
+    }
+    
+    @Test
+    public void testGetPelaajienLukumaara() {
+	System.out.println("getPelaajienLukumaara");
+	Tykkipeli instance = new Tykkipeli();
+	int expResult = 30;
+	for (int i=0;i<30;i++)
+	    instance.lisaaPelaaja(new Pelaaja("nimi"));
+	int result = instance.getPelaajienLukumaara();
+	assertEquals(expResult, result);
     }
 
-    /**
-     * Test of setPelaajienLukumaara method, of class Tykkipeli.
-     */
-    @Test
-    public void testSetPelaajienLukumaara() {
-	System.out.println("setPelaajienLukumaara");
-	int pelaajienLukumaara = 0;
-	Tykkipeli instance = new Tykkipeli();
-	instance.setPelaajienLukumaara(pelaajienLukumaara);
-	// TODO review the generated test code and remove the default call to fail.
-	fail("The test case is a prototype.");
-    }
+    //poistetaan, koska ei ole enää olemassa metodiakaan
+//    /**
+//     * Test of setPelaajienLukumaara method, of class Tykkipeli.
+//     */
+//    @Test
+//    public void testSetPelaajienLukumaara() {
+//	System.out.println("setPelaajienLukumaara");
+//	int pelaajienLukumaara = 700;
+//	Tykkipeli instance = new Tykkipeli();
+//	instance.setPelaajienLukumaara(pelaajienLukumaara);
+//	//mikä on tämä assertjuttu? lisätään assert tähän nyt
+//	assertEquals(pelaajienLukumaara, instance.getPelaajienLukumaara());
+//    }
 
     /**
      * Test of getPelaajat method, of class Tykkipeli.
@@ -69,11 +81,16 @@ public class TykkipeliTest {
     public void testGetPelaajat() {
 	System.out.println("getPelaajat");
 	Tykkipeli instance = new Tykkipeli();
-	List expResult = null;
+	Pelaaja p1 = new Pelaaja("p1");
+	Pelaaja p2 = new Pelaaja("p2");
+	List<Pelaaja> testilista = new ArrayList();
+	testilista.add(p1);
+	testilista.add(p2);
+	instance.lisaaPelaaja(p1);
+	instance.lisaaPelaaja(p2);
+	List expResult = testilista;
 	List result = instance.getPelaajat();
 	assertEquals(expResult, result);
-	// TODO review the generated test code and remove the default call to fail.
-	fail("The test case is a prototype.");
     }
 
     /**
@@ -83,10 +100,15 @@ public class TykkipeliTest {
     public void testSetPelaajat() {
 	System.out.println("setPelaajat");
 	List<Pelaaja> pelaajat = null;
+	Pelaaja p1 = new Pelaaja("p1");
+	Pelaaja p2 = new Pelaaja("p2");
+	List<Pelaaja> testilista = new ArrayList();
+	testilista.add(p1);
+	testilista.add(p2);
+	pelaajat = testilista;
 	Tykkipeli instance = new Tykkipeli();
 	instance.setPelaajat(pelaajat);
-	// TODO review the generated test code and remove the default call to fail.
-	fail("The test case is a prototype.");
+	assertArrayEquals(testilista.toArray(), instance.getPelaajat().toArray());
     }
 
     /**
@@ -96,24 +118,25 @@ public class TykkipeliTest {
     public void testGetPeliMaailma() {
 	System.out.println("getPeliMaailma");
 	Tykkipeli instance = new Tykkipeli();
-	Maailma expResult = null;
+	Maailma expResult = new Maailma();
+	instance.setPeliMaailma(expResult);
 	Maailma result = instance.getPeliMaailma();
 	assertEquals(expResult, result);
-	// TODO review the generated test code and remove the default call to fail.
-	fail("The test case is a prototype.");
     }
 
+    //TODO: Luo Tykkipeli:lle konstruktori joka ottaa parametrina pelimaailman
+    //	    ja testaa se
+    
     /**
      * Test of setPeliMaailma method, of class Tykkipeli.
      */
     @Test
     public void testSetPeliMaailma() {
 	System.out.println("setPeliMaailma");
-	Maailma peliMaailma = null;
+	Maailma peliMaailma = new Maailma();
 	Tykkipeli instance = new Tykkipeli();
 	instance.setPeliMaailma(peliMaailma);
-	// TODO review the generated test code and remove the default call to fail.
-	fail("The test case is a prototype.");
+	assertEquals(peliMaailma, instance.getPeliMaailma());
     }
 
     /**
@@ -122,39 +145,43 @@ public class TykkipeliTest {
     @Test
     public void testLisaaPelaaja() {
 	System.out.println("lisaaPelaaja");
-	Pelaaja pelaaja = null;
+	String nimi = "Pelaajan nimi";
+	Pelaaja pelaaja = new Pelaaja(nimi);
 	Tykkipeli instance = new Tykkipeli();
 	instance.lisaaPelaaja(pelaaja);
-	// TODO review the generated test code and remove the default call to fail.
-	fail("The test case is a prototype.");
+	assertEquals(nimi, instance.getPelaajat().get(0).getNimi());
     }
 
     /**
      * Test of arvoPelaajienPaikat method, of class Tykkipeli.
      */
     @Test
-    public void testArvoPelaajienPaikat() {
+    public void testArvoPelaajienPaikat2Pelaaja() {
 	System.out.println("arvoPelaajienPaikat");
 	Tykkipeli instance = new Tykkipeli();
+	instance.lisaaPelaaja(new Pelaaja("p1"));
+	instance.lisaaPelaaja(new Pelaaja("p2"));
 	instance.arvoPelaajienPaikat();
-	// TODO review the generated test code and remove the default call to fail.
-	fail("The test case is a prototype.");
+	Pelaaja p1 = instance.getPelaajat().get(0);
+	Pelaaja p2 = instance.getPelaajat().get(1);
+	boolean tulos = true;
+	for(int i=0;i<100;i++) {
+	    if(p1.getSijainti().x >= p2.getSijainti().x) {
+		tulos = false;
+	    }
+	}
+	assertTrue(tulos);
     }
 
     /**
      * Test of pelaajaAmpuu method, of class Tykkipeli.
      */
+    
+    //nämä testit vaativat enemmän syventymistä, sillä tässä on ehkä koko pelin
+    //tärkein asia
+    //TODO: KUNNON TESTIT AMPUMISELLE
     @Test
     public void testPelaajaAmpuu() {
-	System.out.println("pelaajaAmpuu");
-	Pelaaja pelaaja = null;
-	double koro = 0.0;
-	int teho = 0;
-	Tykkipeli instance = new Tykkipeli();
-	Lentorata expResult = null;
-	Lentorata result = instance.pelaajaAmpuu(pelaaja, koro, teho);
-	assertEquals(expResult, result);
-	// TODO review the generated test code and remove the default call to fail.
-	fail("The test case is a prototype.");
+	
     }
 }

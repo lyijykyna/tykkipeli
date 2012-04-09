@@ -1,5 +1,7 @@
 package tykkipeli.model;
 
+import java.awt.Point;
+
 /**
  * Pelaajan tiedot ja toiminnot sisältävä luokka
  * 
@@ -11,6 +13,7 @@ public class Pelaaja {
     private boolean pelissa;
     private int teho;
     private double koro;
+    private Point sijainti;
 
     /**
      * Parametrillinen konstruktori Pelaaja-luokalle
@@ -19,6 +22,7 @@ public class Pelaaja {
     public Pelaaja(String nimi) {
 	this.nimi = nimi;
 	this.pelissa = true;
+	this.sijainti = null;
     }
     
     /**
@@ -61,6 +65,7 @@ public class Pelaaja {
      * @param tykki pelaajaan yhdistettävä tykki
      */
     public void setTykki(Tykki tykki) {
+	tykki.setSijainti(this.sijainti);
 	this.tykki = tykki;
     }
 
@@ -107,6 +112,16 @@ public class Pelaaja {
     public void setKoro(double koro) {
 	this.koro = koro;
     }
+
+    public Point getSijainti() {
+	return sijainti;
+    }
+
+    public void setSijainti(Point sijainti) {
+	this.sijainti = sijainti;
+    }
     
-    
+    public void setSijainti(int x, int y) {
+	this. sijainti = new Point(x,y);
+    }
 }
