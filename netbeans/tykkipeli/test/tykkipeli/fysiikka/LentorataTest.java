@@ -240,7 +240,8 @@ public class LentorataTest {
 	System.out.println("getAmmusIteroinninJalkeen");
 	Lentorata instance = new Lentorata(0, 0, 0, 0, 0);
 	Ammus ammus = new Ammus(13, 13);
-	instance.iteroiRata(ammus);
+	instance.setAmmus(ammus);
+	instance.iteroiRata();
 	Ammus expResult =  ammus;
 	Ammus result = instance.getAmmus();
 	assertEquals(expResult, result);

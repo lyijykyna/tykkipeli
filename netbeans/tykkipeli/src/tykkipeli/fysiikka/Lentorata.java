@@ -100,8 +100,7 @@ public class Lentorata {
 	this.ammus = ammus;
     }
     
-    public Point iteroiRata(Ammus ammus) {
-	this.ammus = ammus;
+    public void iteroiRata() {
         Point uusiPiste = new Point();
         //r(t)=(x_0+v_0*x*t)i+(y_0+v_0y*t-½*g*t^2)j
         //uusi t = t0+deltat
@@ -113,6 +112,6 @@ public class Lentorata {
         uusiPiste.y = (int) (this.y0+this.v0y*(this.t0+this.dt)-0.5*PUTOAMISKIIHTYVYYS*(this.t0+this.dt)*(this.t0+this.dt));
         //System.out.println("Aika-askel: "+this.dt);
         dt+=aikaAskel;
-        return uusiPiste;
+        this.ammus.setSijainti(uusiPiste);
     }
 }

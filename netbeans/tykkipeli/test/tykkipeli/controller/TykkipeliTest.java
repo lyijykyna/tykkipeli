@@ -9,6 +9,7 @@ import java.util.List;
 import org.junit.*;
 import static org.junit.Assert.*;
 import tykkipeli.fysiikka.Lentorata;
+import tykkipeli.model.Ammus;
 import tykkipeli.model.Pelaaja;
 import tykkipeli.model.Tykki;
 
@@ -182,6 +183,27 @@ public class TykkipeliTest {
     //TODO: KUNNON TESTIT AMPUMISELLE
     @Test
     public void testPelaajaAmpuu() {
-	
+	//kaava vikipediasta: kantama
+	//       v_0^2*sin(2*korokulma)
+	//  R = ---------------------------
+	//         putoamiskiihtyvyys
+	//
+	Pelaaja p1 = new Pelaaja("p1");
+	Tykki t1 = new Tykki(0, 0);
+	p1.setTykki(t1);
+	System.out.println("Tykin sijainti "+p1.getTykki().getSijainti());
+	Tykki t2 = new Tykki(100,0);
+	//etäisyydelle 100:
+	//v_0=Math.sqrt(1000);
+	//koro=45°
+	Tykkipeli peli = new Tykkipeli();
+	peli.lisaaPelaaja(p1);
+	Lentorata rata = peli.pelaajaAmpuu(p1, 45, Math.sqrt(1000));
+	while (rata.getAmmus().getSijainti().y >= 0 && rata.getAmmus().getSijainti().x < 200) {
+	    System.out.println(rata.getAmmus().getSijainti());
+	    rata.iteroiRata();
+	}
+	//nykyisellä aika-askeleella ammus lentää maan alle ja x=102 ==> 3 tarkkuus
+	assertEquals(t2.getSijainti().x, rata.getAmmus().getSijainti().x,3);
     }
 }
