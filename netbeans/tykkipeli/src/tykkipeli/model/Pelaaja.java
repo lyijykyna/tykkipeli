@@ -11,8 +11,8 @@ public class Pelaaja {
     private String nimi;
     private Tykki tykki;
     private boolean pelissa;
-    private int teho;
-    private double koro;
+    private int teho; //TODO: tälle jotkut raja-arvot? ja testit
+    private double koro; //TODO: Päätä pistetäänkö pyörähtämään nollaan täyden jälkeen, sekä rajoitetaanko vain 180° ja testit tälle
     private Point sijainti;
 
     /**
