@@ -21,7 +21,7 @@ public class Main {
 	tykkipeli.setPeliMaailma(new Maailma());
 	System.out.println("Aloitetaan ohjelma");
 	//lisätään pelaajat
-	for(int i=0;i<tykkipeli.getPelaajienLukumaara();i++) {
+	for(int i=0;i<2;i++) {
 	    tykkipeli.lisaaPelaaja(new Pelaaja("Pelaaja"+(i+1)));
 	    System.out.println("Lisättiin pelaaja "+tykkipeli.getPelaajat().get(i).getNimi());
 	    tykkipeli.getPelaajat().get(i).setTykki(new Tykki());
@@ -45,7 +45,7 @@ public class Main {
 	    Lentorata rata = tykkipeli.pelaajaAmpuu(p1,nro1,nro2);
 	    int iii = 0;
 	    while(!tykkipeli.getPeliMaailma().tormaysTarkistus(rata.getAmmus(), p2.getTykki()) && iii<500 && rata.getAmmus().getSijainti().y >= 0) {
-		rata.getAmmus().setSijainti(rata.iteroiRata(rata.getAmmus()));
+		rata.iteroiRata();
 		iii++;
 	    }
 	    System.out.println("Rataa iteroitiin "+iii+" kertaa");
