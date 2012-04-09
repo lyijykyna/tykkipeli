@@ -22,18 +22,19 @@ public class Tykkipeli {
 	this.pelaajat = new ArrayList<Pelaaja>();
     }
     
-    public Tykkipeli(int pelaajienLukumaara) {
-	this.pelaajienLukumaara = pelaajienLukumaara;
-	this.pelaajat = new ArrayList<Pelaaja>();
-    }
+//    public Tykkipeli(int pelaajienLukumaara) {
+//	this.pelaajienLukumaara = pelaajienLukumaara;
+//	this.pelaajat = new ArrayList<Pelaaja>();
+//    }
     
     public int getPelaajienLukumaara() {
-	return pelaajienLukumaara;
+	return pelaajat.size();
     }
 
-    public void setPelaajienLukumaara(int pelaajienLukumaara) {
-	this.pelaajienLukumaara = pelaajienLukumaara;
-    }
+    //poistetaan tämä, koska pelaajienLukumäärä riippuu vain taulukon koosta
+//    public void setPelaajienLukumaara(int pelaajienLukumaara) {
+//	this.pelaajienLukumaara = pelaajienLukumaara;
+//    }
     
     public List<Pelaaja> getPelaajat() {
 	return pelaajat;
@@ -59,13 +60,16 @@ public class Tykkipeli {
 	int x = 0;
 	int y = 0;
 	int min = 0;
-	int max = this.peliMaailma.getLEVEYS()/this.pelaajienLukumaara;
+	int max = this.peliMaailma.getLEVEYS()/getPelaajienLukumaara();
 	Random random = new Random();
 	for(Pelaaja p : this.pelaajat) {
 	    x = random.nextInt(max-min)+min;
-	    p.getTykki().setSijainti(new Point(x,y));
+	    //pelaajalla on nyt oma sijainti, ehkä siitä tehdään sittenkin
+	    //merkitsevä sijainti tykille
+	    //p.getTykki().setSijainti(new Point(x,y));
+	    p.setSijainti(x,y);
 	    min = max;
-	    max += this.peliMaailma.getLEVEYS()/this.pelaajienLukumaara;
+	    max += this.peliMaailma.getLEVEYS()/getPelaajienLukumaara();
 	}
     }
     
