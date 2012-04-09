@@ -121,10 +121,14 @@ public class Pelaaja {
     }
 
     public void setSijainti(Point sijainti) {
+	if(this.tykki != null)
+	    this.tykki.setSijainti(sijainti);
 	this.sijainti = sijainti;
     }
     
     public void setSijainti(int x, int y) {
+	if(this.tykki != null)
+	    this.tykki.setSijainti(new Point(x,y));
 	this. sijainti = new Point(x,y);
     }
 }
