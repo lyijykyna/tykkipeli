@@ -26,10 +26,11 @@ public class Main {
 	    System.out.println("Lisättiin pelaaja "+tykkipeli.getPelaajat().get(i).getNimi());
 	    tykkipeli.getPelaajat().get(i).setTykki(new Tykki());
 	    System.out.println("Lisättiin pelaajalle tykki");
-	    tykkipeli.arvoPelaajienPaikat();
+	    //tykkipeli.arvoPelaajienPaikat();
 	    System.out.println("Sijoitettiin pelaajan tykki pisteeseen"+tykkipeli.getPelaajat().get(i).getTykki().getSijainti());
 	    System.out.println("---------------------------------------------");
 	}
+	tykkipeli.arvoPelaajienPaikat();
 	System.out.println("Aloitetaan peli");
 	Pelaaja p1 = tykkipeli.getPelaajat().get(0);
 	p1.setKoro(45);

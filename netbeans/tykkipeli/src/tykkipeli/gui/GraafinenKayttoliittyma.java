@@ -29,12 +29,12 @@ public class GraafinenKayttoliittyma extends JDialog {
 	objektit.lisaaObjekti(kuula2);
 	
 	//Huono ratkaisu, mutta menköön, lisätään uusi objekti lentoradan pisteiden mukaan
-	Lentorata rata = new Lentorata(0, 200, 50, 50, 0);
-	for(int i=0;i<12;i++) {
-            kuula1.setSijainti(rata.iteroiRata(kuula1));
-	    Ammus dummy = new Ammus(kuula1.getSijainti());
-	    objektit.lisaaObjekti(dummy);
-	}
+//	Lentorata rata = new Lentorata(0, 200, 50, 50, 0);
+//	for(int i=0;i<12;i++) {
+//            kuula1.setSijainti(rata.iteroiRata(kuula1));
+//	    Ammus dummy = new Ammus(kuula1.getSijainti());
+//	    objektit.lisaaObjekti(dummy);
+//	}
 	
 	System.out.println(objektit.getObjektit());
 	getContentPane().add(maa); //TODO: Pitäisi saada piirtymään samaan aikaan
