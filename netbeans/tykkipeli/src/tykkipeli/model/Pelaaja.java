@@ -65,7 +65,10 @@ public class Pelaaja {
      * @param tykki pelaajaan yhdistettävä tykki
      */
     public void setTykki(Tykki tykki) {
-	tykki.setSijainti(this.sijainti);
+	if(this.sijainti == null)
+	    this.sijainti = tykki.getSijainti();
+	else
+	    tykki.setSijainti(this.sijainti);
 	this.tykki = tykki;
     }
 
