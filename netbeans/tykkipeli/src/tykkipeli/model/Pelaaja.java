@@ -11,7 +11,7 @@ public class Pelaaja {
     private String nimi;
     private Tykki tykki;
     private boolean pelissa;
-    private int teho; //TODO: tälle jotkut raja-arvot? ja testit
+    private double teho; //TODO: tälle jotkut raja-arvot? ja testit
     private double koro; //TODO: Päätä pistetäänkö pyörähtämään nollaan täyden jälkeen, sekä rajoitetaanko vain 180° ja testit tälle
     private Point sijainti;
 
@@ -96,11 +96,11 @@ public class Pelaaja {
 	this.setPelissa(false);
     }
 
-    public int getTeho() {
+    public double getTeho() {
 	return teho;
     }
 
-    public void setTeho(int teho) {
+    public void setTeho(double teho) {
 	this.teho = teho;
     }
 

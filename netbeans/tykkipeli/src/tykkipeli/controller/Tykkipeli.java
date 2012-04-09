@@ -73,7 +73,7 @@ public class Tykkipeli {
 	}
     }
     
-    public Lentorata pelaajaAmpuu(Pelaaja pelaaja, double koro, int teho) {
+    public Lentorata pelaajaAmpuu(Pelaaja pelaaja, double koro, double teho) {
 	pelaaja.setKoro(koro);
 	pelaaja.setTeho(teho);
 	Point alkupsijainti = pelaaja.getTykki().getSijainti();
