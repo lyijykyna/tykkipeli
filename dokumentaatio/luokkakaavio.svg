@@ -24,16 +24,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.8813223"
-     inkscape:cx="337.5306"
-     inkscape:cy="1003.7525"
+     inkscape:zoom="1.3302958"
+     inkscape:cx="266.10028"
+     inkscape:cy="886.38739"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="998"
      inkscape:window-height="706"
      inkscape:window-x="359"
-     inkscape:window-y="181"
+     inkscape:window-y="32"
      inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
@@ -172,85 +172,21 @@
     <rect
        style="fill:none;stroke:#000000"
        id="rect3013"
-       width="194.01248"
-       height="200.39098"
-       x="239.19347"
-       y="73.263596" />
+       width="87.269302"
+       height="66.586159"
+       x="216.12619"
+       y="342.64047" />
     <text
        xml:space="preserve"
        style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="242.38271"
-       y="69.542809"
+       x="219.31543"
+       y="338.91968"
        id="text3015"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan3017"
-         x="242.38271"
-         y="69.542809">gui</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="262.58127"
-       y="109.93993"
-       id="text3019"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3021"
-         x="262.58127"
-         y="109.93993">GraafinenKayttoliittyma</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="263.64435"
-       y="149.80551"
-       id="text3023"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3025"
-         x="263.64435"
-         y="149.80551">MaanPiirrin</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="273.2121"
-       y="194.9865"
-       id="text3027"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3029"
-         x="273.2121"
-         y="194.9865">ObjektienPiirrin</tspan></text>
-    <rect
-       style="fill:none;stroke:#000000"
-       id="rect3031"
-       width="153.08382"
-       height="26.045511"
-       x="259.92355"
-       y="92.930618" />
-    <rect
-       style="fill:none;stroke:#000000"
-       id="rect3033"
-       width="72.289581"
-       height="22.324724"
-       x="262.04974"
-       y="133.32773" />
-    <rect
-       style="fill:none;stroke:#000000"
-       id="rect3035"
-       width="93.019684"
-       height="22.324724"
-       x="272.68054"
-       y="180.63489" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 308.82534,133.32774 6.91003,-14.88315"
-       id="path3037"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 350.81708,180.10335 9.56774,-61.65876 0,0 0,0"
-       id="path3039"
-       inkscape:connector-curvature="0" />
+         x="219.31543"
+         y="338.91968">gui</tspan></text>
     <rect
        style="fill:none;stroke:#000000"
        id="rect3041"
@@ -287,20 +223,119 @@
        height="22.856264"
        x="477.85538"
        y="115.25534" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-opacity:1"
+       id="rect3769-7"
+       width="73.884201"
+       height="22.324722"
+       x="85.31234"
+       y="238.57286" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="98.069321"
+       y="254.51909"
+       id="text3771-8"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3773-7"
+         x="98.069321"
+         y="254.51909">Pelaaja</tspan></text>
+    <rect
+       style="fill:#ffffff"
+       id="rect3767-0"
+       width="76.010368"
+       height="38.270954"
+       x="296.74002"
+       y="171.76186" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-opacity:1"
+       id="rect3769-79"
+       width="73.884201"
+       height="22.324722"
+       x="252.64693"
+       y="121.17694" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="265.4039"
+       y="137.12317"
+       id="text3771-9"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3773-2"
+         x="265.4039"
+         y="137.12317">Tykkipeli</tspan></text>
+    <rect
+       style="fill:none;stroke:#000000"
+       id="rect3007-4"
+       width="200.39098"
+       height="197.20172"
+       x="235.82002"
+       y="75.650597" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="240.07234"
+       y="72.461349"
+       id="text3009-4"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3011-5"
+         x="240.07234"
+         y="72.461349">controller</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-opacity:1"
+       id="rect3769-7-3"
+       width="73.884201"
+       height="22.324722"
+       x="300.15997"
+       y="191.567" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="312.91693"
+       y="207.51323"
+       id="text3771-8-1"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3773-7-5"
+         x="312.91693"
+         y="207.51323">Maailma</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 413.00738,106.75068 63.78493,20.7301"
-       id="path3053"
+       d="m 159.36306,251.03662 132.3014,-107.4949"
+       id="path3098"
        inkscape:connector-curvature="0" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 141.92146,130.13849 129.69601,63.25338"
-       id="path3055"
+       d="m 142.07367,212.69928 -0.75171,23.30309"
+       id="path3100"
        inkscape:connector-curvature="0" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 141.38991,124.29154 116.40749,-82.920403 155.74152,3.189246 84.51503,71.226497 0,0"
-       id="path3057"
+       d="m 323.9881,190.89961 -14.28253,-48.1096"
+       id="path3104"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 36.833914,189.39619 0.751713,-92.460644 477.337463,0.751713 0,16.537671 0.75171,0"
+       id="path3106"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 141.32196,131.51432 157.10792,72.16441 0.75171,0"
+       id="path3108"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 224.01034,349.51096 72.1644,49.61303"
+       id="path3110"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 221.00349,402.88255 73.66783,-52.61988"
+       id="path3112"
        inkscape:connector-curvature="0" />
   </g>
 </svg>
