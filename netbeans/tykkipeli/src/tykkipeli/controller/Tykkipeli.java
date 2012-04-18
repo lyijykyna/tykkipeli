@@ -56,6 +56,10 @@ public class Tykkipeli {
 	this.pelaajat.add(pelaaja);
     }
     
+    public void liitaPelaajaMaailmaan(Pelaaja pelaaja) {
+	this.peliMaailma.lisaaObjekti(pelaaja.getTykki());
+    }
+    
     public void arvoPelaajienPaikat() {
 	int x = 0;
 	int y = 0;

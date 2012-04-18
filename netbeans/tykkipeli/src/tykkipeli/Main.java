@@ -4,6 +4,8 @@ import java.util.Random;
 import tykkipeli.controller.Maailma;
 import tykkipeli.controller.Tykkipeli;
 import tykkipeli.fysiikka.Lentorata;
+import tykkipeli.gui.Ikkuna;
+import tykkipeli.gui.PeliAlue;
 import tykkipeli.model.Pelaaja;
 import tykkipeli.model.Tykki;
 
@@ -29,6 +31,7 @@ public class Main {
 	    //tykkipeli.arvoPelaajienPaikat();
 	    System.out.println("Sijoitettiin pelaajan tykki pisteeseen"+tykkipeli.getPelaajat().get(i).getTykki().getSijainti());
 	    System.out.println("---------------------------------------------");
+	    tykkipeli.liitaPelaajaMaailmaan(tykkipeli.getPelaajat().get(i));
 	}
 	tykkipeli.arvoPelaajienPaikat();
 	System.out.println("Aloitetaan peli");
@@ -77,5 +80,12 @@ public class Main {
 	testi.setKoro(90);
 	System.out.println(testi.getKoroRadiaaneina());
 	System.out.println(Math.PI/2);
+	//GUI
+	Ikkuna ikkuna = new Ikkuna("Tykkipeli");
+	ikkuna.lisaaTeksti("testiteksti");
+	ikkuna.lisaaTeksti("jeejee",100,100);
+	ikkuna.pakkaaIkkuna();
+	ikkuna.setSize(800, 600);
+	ikkuna.naytaIkkuna();
     }
 }
