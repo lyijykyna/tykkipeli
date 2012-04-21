@@ -17,6 +17,7 @@ public class Tykkipeli {
     private int pelaajienLukumaara;
     private List<Pelaaja> pelaajat;
     private Maailma peliMaailma;
+    private Pelaaja vuoro;
 
     public Tykkipeli() {
 	this.pelaajat = new ArrayList<Pelaaja>();
@@ -54,6 +55,8 @@ public class Tykkipeli {
     
     public void lisaaPelaaja(Pelaaja pelaaja) {
 	this.pelaajat.add(pelaaja);
+        if(this.vuoro == null)
+            this.setVuoro(pelaaja);
     }
     
     public void arvoPelaajienPaikat() {
@@ -84,4 +87,14 @@ public class Tykkipeli {
 	rata.setAmmus(ammuttu);
 	return rata;
     }
+
+    public Pelaaja getVuoro() {
+        return vuoro;
+    }
+
+    public void setVuoro(Pelaaja vuoro) {
+        this.vuoro = vuoro;
+    }
+    
+    
 }
