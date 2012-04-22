@@ -1,5 +1,6 @@
 package tykkipeli.gui;
 
+import com.sun.org.apache.xerces.internal.impl.dv.xs.YearDV;
 import java.awt.*;
 import javax.swing.*;
 import tykkipeli.controller.Tykkipeli;
@@ -33,7 +34,7 @@ public class Ikkuna implements Runnable{
     
     private void luoKomponentit(Container container) {
         Pelialue pelialue = new Pelialue(peli);
-        container.add(pelialue,BoxLayout.X_AXIS);
+        container.add(pelialue,BorderLayout.CENTER);
         container.add(luoTykinHallinta(),BorderLayout.SOUTH);
         
     }
@@ -43,16 +44,24 @@ public class Ikkuna implements Runnable{
         JPanel koro = new JPanel();
         JPanel teho = new JPanel();
         
-        paneeli.add(new JLabel(peli.getVuoro().getNimi()));
-        paneeli.add(new JButton("Ammu"),BorderLayout.WEST);
+        JLabel pelaaja = new JLabel(peli.getVuorossaOlevaPelaaja().getNimi());
+        paneeli.add(pelaaja);
+        JButton ammu = new JButton("Ammu");
+        paneeli.add(ammu,BorderLayout.WEST);
         
         teho.add(new JLabel("Teho"),BorderLayout.NORTH);
-        teho.add(new JTextField("             "),BorderLayout.EAST);
+        JTextField tehoTeksti = new JTextField(""+peli.getVuorossaOlevaPelaaja().getTeho());
+        teho.add(tehoTeksti,BorderLayout.EAST);
         paneeli.add(teho);
         
         koro.add(new JLabel("Koro"),BorderLayout.NORTH);
-        koro.add(new JTextField("             "),BorderLayout.EAST);
+        JTextField koroTeksti = new JTextField(""+peli.getVuorossaOlevaPelaaja().getKoro());
+        koro.add(koroTeksti,BorderLayout.EAST);
         paneeli.add(koro,BorderLayout.EAST);
+        
+        TapahtumienKasittelija tk = new TapahtumienKasittelija(peli,pelaaja,tehoTeksti, koroTeksti);
+        ammu.addActionListener(tk);
+        
         return paneeli;
     }
     
