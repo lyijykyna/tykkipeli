@@ -27,6 +27,7 @@ public class Main {
 	    System.out.println("Lisättiin pelaaja "+tykkipeli.getPelaajat().get(i).getNimi());
 	    tykkipeli.getPelaajat().get(i).setTykki(new Tykki());
 	    System.out.println("Lisättiin pelaajalle tykki");
+            tykkipeli.getPeliMaailma().lisaaObjekti(tykkipeli.getPelaajat().get(i).getTykki());
 	    //tykkipeli.arvoPelaajienPaikat();
 	    System.out.println("Sijoitettiin pelaajan tykki pisteeseen"+tykkipeli.getPelaajat().get(i).getTykki().getSijainti());
 	    System.out.println("---------------------------------------------");
