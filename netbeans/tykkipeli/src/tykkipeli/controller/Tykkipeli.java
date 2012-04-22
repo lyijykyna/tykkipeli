@@ -17,10 +17,11 @@ public class Tykkipeli {
     private int pelaajienLukumaara;
     private List<Pelaaja> pelaajat;
     private Maailma peliMaailma;
-    private Pelaaja vuoro;
+    private int vuoro;
 
     public Tykkipeli() {
 	this.pelaajat = new ArrayList<Pelaaja>();
+        this.vuoro = 0;
     }
     
 //    public Tykkipeli(int pelaajienLukumaara) {
@@ -55,8 +56,6 @@ public class Tykkipeli {
     
     public void lisaaPelaaja(Pelaaja pelaaja) {
 	this.pelaajat.add(pelaaja);
-        if(this.vuoro == null)
-            this.setVuoro(pelaaja);
     }
     
     public void arvoPelaajienPaikat() {
@@ -88,13 +87,27 @@ public class Tykkipeli {
 	return rata;
     }
 
-    public Pelaaja getVuoro() {
+    public int getVuoro() {
         return vuoro;
     }
 
-    public void setVuoro(Pelaaja vuoro) {
+    public void setVuoro(int vuoro) {
         this.vuoro = vuoro;
     }
     
+    public void muutaVuoro() {
+        if(this.vuoro < this.getPelaajienLukumaara()-1) {
+            vuoro++;
+            System.out.println("Muutettiin vuoroa");
+        }
+        else {
+            vuoro = 0;
+            System.out.println("Palautettiin vuoro ensimmäiselle pelaajalle");
+        }
+    }
+    
+    public Pelaaja getVuorossaOlevaPelaaja() {
+        return this.pelaajat.get(vuoro);
+    }
     
 }

@@ -40,6 +40,7 @@ public class Main {
 	System.out.println("Aloitetaan peli");
 	p1.setKoro(45);
 	p1.setTeho(10);
+        System.out.println(tykkipeli.getPelaajienLukumaara());
         
         Ikkuna ikkuna = new Ikkuna(tykkipeli);
         SwingUtilities.invokeLater(ikkuna);
