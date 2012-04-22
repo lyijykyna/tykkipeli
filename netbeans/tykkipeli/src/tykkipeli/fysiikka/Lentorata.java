@@ -1,12 +1,14 @@
 package tykkipeli.fysiikka;
 
 import java.awt.Point;
+import tykkipeli.controller.Maailma;
 import tykkipeli.model.Ammus;
 
 
 public class Lentorata {
     private static double PUTOAMISKIIHTYVYYS = -10;
     private static double aikaAskel = 0.1; //0.1 on melko hyvä 640x480 maailmalle
+    private Maailma maailma;
     private int x0;
     private int y0;
     private double v0x;
@@ -15,7 +17,8 @@ public class Lentorata {
     private double dt;
     private Ammus ammus;
 
-    public Lentorata(int x0, int y0, double v0x, double v0y, int t0) {
+    public Lentorata(Maailma maailma, int x0, int y0, double v0x, double v0y, int t0) {
+        this.maailma = maailma;
         this.x0 = x0;
         this.y0 = y0;
         this.v0x = v0x;
@@ -41,6 +44,13 @@ public class Lentorata {
         Lentorata.aikaAskel = aikaAskel;
     }
 
+    public Maailma getMaailma() {
+        return maailma;
+    }
+
+    public void setMaailma(Maailma maailma) {
+        this.maailma = maailma;
+    }
     
     public double getDt() {
         return dt;
@@ -113,5 +123,6 @@ public class Lentorata {
         //System.out.println("Aika-askel: "+this.dt);
         dt+=aikaAskel;
         this.ammus.setSijainti(uusiPiste);
+        this.maailma.lisaaObjekti(ammus);
     }
 }

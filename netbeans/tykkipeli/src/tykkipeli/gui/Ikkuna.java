@@ -35,11 +35,11 @@ public class Ikkuna implements Runnable{
     private void luoKomponentit(Container container) {
         Pelialue pelialue = new Pelialue(peli);
         container.add(pelialue,BorderLayout.CENTER);
-        container.add(luoTykinHallinta(),BorderLayout.SOUTH);
+        container.add(luoTykinHallinta(pelialue),BorderLayout.SOUTH);
         
     }
     
-    private JPanel luoTykinHallinta() {
+    private JPanel luoTykinHallinta(Pelialue pelialue) {
         JPanel paneeli = new JPanel();
         JPanel koro = new JPanel();
         JPanel teho = new JPanel();
@@ -59,7 +59,7 @@ public class Ikkuna implements Runnable{
         koro.add(koroTeksti,BorderLayout.EAST);
         paneeli.add(koro,BorderLayout.EAST);
         
-        TapahtumienKasittelija tk = new TapahtumienKasittelija(peli,pelaaja,tehoTeksti, koroTeksti);
+        TapahtumienKasittelija tk = new TapahtumienKasittelija(peli,pelialue,pelaaja,tehoTeksti, koroTeksti);
         ammu.addActionListener(tk);
         
         return paneeli;

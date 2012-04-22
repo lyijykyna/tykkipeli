@@ -3,12 +3,11 @@ package tykkipeli.gui;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
-import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import tykkipeli.controller.Tykkipeli;
-import tykkipeli.model.Pelaaja;
 import tykkipeli.model.PeliObjekti;
+import tykkipeli.model.Tykki;
 
 /**
  *
@@ -33,7 +32,9 @@ public class Pelialue extends JPanel {
 //        for(Pelaaja p : tykkipeli.getPelaajat()) {
 //            g.fillRect(p.getSijainti().x, p.getSijainti().y+tykkipeli.getPeliMaailma().getKORKEUS()-20, 20, 20);
 //        }
+        System.out.println("Pelissä objekteja:");
         for(PeliObjekti o : tykkipeli.getPeliMaailma().getObjektit()) {
+            System.out.println(tykkipeli.getPeliMaailma().getObjektit());
             g.fillRect(o.getSijainti().x, o.getSijainti().y+tykkipeli.getPeliMaailma().getKORKEUS()-20, 20, 20);
         }
     }

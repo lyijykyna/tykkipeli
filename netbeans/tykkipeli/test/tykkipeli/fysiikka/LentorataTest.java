@@ -7,6 +7,7 @@ package tykkipeli.fysiikka;
 import java.awt.Point;
 import org.junit.*;
 import static org.junit.Assert.*;
+import tykkipeli.controller.Maailma;
 import tykkipeli.model.Ammus;
 
 /**
@@ -84,7 +85,8 @@ public class LentorataTest {
     @Test
     public void testGetDt() {
 	System.out.println("getDt");
-	Lentorata instance = new Lentorata(0,0,0,0,0);
+        Maailma testimaailma = new Maailma();
+	Lentorata instance = new Lentorata(testimaailma,0,0,0,0,0);
 	double expResult = 0.0;
 	double result = instance.getDt();
 	assertEquals(expResult, result, 0.0);
@@ -97,7 +99,8 @@ public class LentorataTest {
     public void testSetDt() {
 	System.out.println("setDt");
 	int dt = 700;
-	Lentorata instance = new Lentorata(0,0,0,0,0);
+        Maailma testimaailma = new Maailma();
+	Lentorata instance = new Lentorata(testimaailma,0,0,0,0,0);
 	instance.setDt(dt);
 	assertEquals(dt, instance.getDt(), 0.0);
     }
@@ -109,7 +112,8 @@ public class LentorataTest {
     public void testGetT0() {
 	System.out.println("getT0");
 	int aikaNolla = 111;
-	Lentorata instance = new Lentorata(0, 0, 0, 0, aikaNolla);
+        Maailma testimaailma = new Maailma();
+	Lentorata instance = new Lentorata(testimaailma,0, 0, 0, 0, aikaNolla);
 	int expResult = aikaNolla;
 	int result = instance.getT0();
 	assertEquals(expResult, result);
@@ -122,7 +126,8 @@ public class LentorataTest {
     public void testSetT0() {
 	System.out.println("setT0");
 	int t0 = 6;
-	Lentorata instance = new Lentorata(0, 0, 0, 0, 0);
+        Maailma testimaailma = new Maailma();
+	Lentorata instance = new Lentorata(testimaailma,0, 0, 0, 0, 0);
 	instance.setT0(t0);
 	assertEquals(t0, instance.getT0());
     }
@@ -133,7 +138,8 @@ public class LentorataTest {
     @Test
     public void testGetV0x() {
 	System.out.println("getV0x");
-	Lentorata instance = new Lentorata(0, 0, 0, 0, 0);
+        Maailma testimaailma = new Maailma();
+	Lentorata instance = new Lentorata(testimaailma,0, 0, 0, 0, 0);
 	double expResult = 0.0;
 	double result = instance.getV0x();
 	assertEquals(expResult, result, 0.0);
@@ -146,7 +152,8 @@ public class LentorataTest {
     public void testSetV0x() {
 	System.out.println("setV0x");
 	double v0 = 3;
-	Lentorata instance = new Lentorata(0, 0, 0, 0, 0);
+        Maailma testimaailma = new Maailma();
+	Lentorata instance = new Lentorata(testimaailma,0, 0, 0, 0, 0);
 	instance.setV0x(v0);
 	assertEquals(v0, instance.getV0x(), 0.0);
     }

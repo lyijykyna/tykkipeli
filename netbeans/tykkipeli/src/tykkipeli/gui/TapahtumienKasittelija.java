@@ -15,12 +15,14 @@ import tykkipeli.model.Pelaaja;
 public class TapahtumienKasittelija implements ActionListener{
 
     private Tykkipeli peli;
+    private Pelialue pelialue;
     private JLabel pelaaja;
     private JTextField teho;
     private JTextField koro;
 
-    public TapahtumienKasittelija(Tykkipeli peli, JLabel pelaaja, JTextField teho, JTextField koro) {
+    public TapahtumienKasittelija(Tykkipeli peli, Pelialue pelialue, JLabel pelaaja, JTextField teho, JTextField koro) {
         this.peli = peli;
+        this.pelialue = pelialue;
         this.pelaaja = pelaaja;
         this.teho = teho;
         this.koro = koro;
@@ -37,12 +39,14 @@ public class TapahtumienKasittelija implements ActionListener{
         for(int i=0;i<10;i++) {
             rata.iteroiRata();
             System.out.println(""+rata.getAmmus().getSijainti());
+            pelialue.repaint();
         }
         this.peli.muutaVuoro();
         pelaaja.setText(peli.getVuorossaOlevaPelaaja().getNimi());
         teho.setText(""+peli.getVuorossaOlevaPelaaja().getTeho());
         koro.setText(""+peli.getVuorossaOlevaPelaaja().getKoro());
         
+        //pelialue.repaint();
     }
     
     
