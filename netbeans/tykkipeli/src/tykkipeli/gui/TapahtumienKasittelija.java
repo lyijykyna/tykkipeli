@@ -40,8 +40,11 @@ public class TapahtumienKasittelija implements ActionListener{
 	while(rata.getAmmus().getSijainti().y >= 0) {
             rata.iteroiRata();
             //System.out.println(""+rata.getAmmus().getSijainti());
-	    peli.getPeliMaailma().tormaysTarkistus(rata.getAmmus(), peli.getPelaajat().get(0));
-	    peli.getPeliMaailma().tormaysTarkistus(rata.getAmmus(), peli.getPelaajat().get(1));
+            if(peli.getVuorossaOlevaPelaaja().equals(peli.getPelaajat().get(0)))
+                peli.getPeliMaailma().tormaysTarkistus(rata.getAmmus(), peli.getPelaajat().get(1));
+            else
+                peli.getPeliMaailma().tormaysTarkistus(rata.getAmmus(), peli.getPelaajat().get(0));
+	    
             pelialue.repaint();
         }
         this.peli.muutaVuoro();

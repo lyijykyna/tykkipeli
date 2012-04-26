@@ -6,6 +6,7 @@ import java.awt.Graphics;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import tykkipeli.controller.Tykkipeli;
+import tykkipeli.model.Pelaaja;
 import tykkipeli.model.PeliObjekti;
 
 /**
@@ -36,10 +37,18 @@ public class Pelialue extends JPanel {
 //            g.fillRect(p.getSijainti().x, p.getSijainti().y+tykkipeli.getPeliMaailma().getKORKEUS()-20, 20, 20);
 //        }
         //System.out.println("Pelissä objekteja:");
+        Pelaaja p1 = tykkipeli.getPelaajat().get(0);
+        Pelaaja p2 = tykkipeli.getPelaajat().get(1);
+        
         for(PeliObjekti o : tykkipeli.getPeliMaailma().getObjektit()) {
             //System.out.println(tykkipeli.getPeliMaailma().getObjektit());
             //g.fillRect(o.getSijainti().x, o.getSijainti().y+tykkipeli.getPeliMaailma().getKORKEUS()-20, 20, 20);
+            if(o.equals(p1.getTykki()))
+                g.setColor(Color.BLUE);
+            else if(o.equals(p2.getTykki()))
+                g.setColor(Color.RED);
 	    g.fillRect(o.getSijainti().x, o.getSijainti().y, 20, 20);
+            g.setColor(Color.BLACK);
         }
     }
     
