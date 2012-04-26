@@ -18,6 +18,7 @@ public class Main {
      */
     public static void main(String[] args) {
 	
+        //TODO nämä johonkin olioon?
 	Tykkipeli tykkipeli = new Tykkipeli();
 	tykkipeli.setPeliMaailma(new Maailma());
 	System.out.println("Aloitetaan ohjelma");
