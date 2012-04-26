@@ -26,7 +26,11 @@ public class Pelialue extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         
-        g.drawImage(new ImageIcon("resources/tausta.png").getImage(),0,0,this);
+        String kuvaPolku = "res/tausta.png";
+        //ImageIcon taustaIkoni = new ImageIcon(kuvaPolku);
+        ImageIcon taustaIkoni = new ImageIcon(getClass().getClassLoader().getResource(kuvaPolku));
+        g.drawImage(taustaIkoni.getImage(),0,0,this);
+        
         
 //        for(Pelaaja p : tykkipeli.getPelaajat()) {
 //            g.fillRect(p.getSijainti().x, p.getSijainti().y+tykkipeli.getPeliMaailma().getKORKEUS()-20, 20, 20);
