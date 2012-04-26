@@ -1,6 +1,5 @@
 package tykkipeli.gui;
 
-import com.sun.org.apache.xerces.internal.impl.dv.xs.YearDV;
 import java.awt.*;
 import javax.swing.*;
 import tykkipeli.controller.Tykkipeli;

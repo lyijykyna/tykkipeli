@@ -30,7 +30,7 @@ public class Main {
             tykkipeli.getPeliMaailma().lisaaObjekti(tykkipeli.getPelaajat().get(i).getTykki());
 	    //tykkipeli.arvoPelaajienPaikat();
 	    for(Pelaaja p : tykkipeli.getPelaajat())
-		p.setSijainti(p.getSijainti().x, p.getSijainti().y+tykkipeli.getPeliMaailma().getKORKEUS());
+		p.setSijainti(p.getSijainti().x, p.getSijainti().y);
 	    System.out.println("Sijoitettiin pelaajan tykki pisteeseen"+tykkipeli.getPelaajat().get(i).getTykki().getSijainti());
 	    System.out.println("---------------------------------------------");
 	}

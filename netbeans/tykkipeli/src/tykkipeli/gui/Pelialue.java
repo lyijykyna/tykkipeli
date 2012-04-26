@@ -7,7 +7,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import tykkipeli.controller.Tykkipeli;
 import tykkipeli.model.PeliObjekti;
-import tykkipeli.model.Tykki;
 
 /**
  *
@@ -27,7 +26,7 @@ public class Pelialue extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         
-        g.drawImage(new ImageIcon("res/tausta.png").getImage(),0,0,this);
+        g.drawImage(new ImageIcon("resources/tausta.png").getImage(),0,0,this);
         
 //        for(Pelaaja p : tykkipeli.getPelaajat()) {
 //            g.fillRect(p.getSijainti().x, p.getSijainti().y+tykkipeli.getPeliMaailma().getKORKEUS()-20, 20, 20);
