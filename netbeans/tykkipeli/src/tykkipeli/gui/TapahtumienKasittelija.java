@@ -35,10 +35,13 @@ public class TapahtumienKasittelija implements ActionListener{
         System.out.println("Ammuttiin tykillä teholla "+this.teho.getText()+" ja korolla "+this.koro.getText());
         vuorossa.setTeho(Double.parseDouble(teho.getText()));
         vuorossa.setKoro(Double.parseDouble(koro.getText()));
-        Lentorata rata = peli.pelaajaAmpuu(vuorossa, vuorossa.getTeho(), vuorossa.getKoro());
-        for(int i=0;i<10;i++) {
+        Lentorata rata = peli.pelaajaAmpuu(vuorossa, vuorossa.getKoro(), vuorossa.getTeho());
+        //for(int i=0;i<10;i++) {
+	while(rata.getAmmus().getSijainti().y >= 0) {
             rata.iteroiRata();
-            System.out.println(""+rata.getAmmus().getSijainti());
+            //System.out.println(""+rata.getAmmus().getSijainti());
+	    peli.getPeliMaailma().tormaysTarkistus(rata.getAmmus(), peli.getPelaajat().get(0));
+	    peli.getPeliMaailma().tormaysTarkistus(rata.getAmmus(), peli.getPelaajat().get(1));
             pelialue.repaint();
         }
         this.peli.muutaVuoro();

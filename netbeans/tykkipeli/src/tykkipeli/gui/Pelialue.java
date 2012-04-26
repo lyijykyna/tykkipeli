@@ -32,10 +32,11 @@ public class Pelialue extends JPanel {
 //        for(Pelaaja p : tykkipeli.getPelaajat()) {
 //            g.fillRect(p.getSijainti().x, p.getSijainti().y+tykkipeli.getPeliMaailma().getKORKEUS()-20, 20, 20);
 //        }
-        System.out.println("Pelissä objekteja:");
+        //System.out.println("Pelissä objekteja:");
         for(PeliObjekti o : tykkipeli.getPeliMaailma().getObjektit()) {
-            System.out.println(tykkipeli.getPeliMaailma().getObjektit());
-            g.fillRect(o.getSijainti().x, o.getSijainti().y+tykkipeli.getPeliMaailma().getKORKEUS()-20, 20, 20);
+            //System.out.println(tykkipeli.getPeliMaailma().getObjektit());
+            //g.fillRect(o.getSijainti().x, o.getSijainti().y+tykkipeli.getPeliMaailma().getKORKEUS()-20, 20, 20);
+	    g.fillRect(o.getSijainti().x, o.getSijainti().y, 20, 20);
         }
     }
     

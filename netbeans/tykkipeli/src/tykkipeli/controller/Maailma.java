@@ -3,6 +3,7 @@ package tykkipeli.controller;
 import java.util.ArrayList;
 import java.util.List;
 import tykkipeli.model.Ammus;
+import tykkipeli.model.Pelaaja;
 import tykkipeli.model.PeliObjekti;
 import tykkipeli.model.Tykki;
 
@@ -62,6 +63,15 @@ public class Maailma {
     
     public boolean tormaysTarkistus(PeliObjekti o1, PeliObjekti o2) {
 	if(o1.getSijainti().distance(o2.getSijainti()) < 0.1) {
+	    System.out.println("OSUMA!");
+	    return true;
+	}
+	else
+	    return false;
+    }
+    
+    public boolean tormaysTarkistus(Ammus o1, Pelaaja o2) {
+	if(o1.getSijainti().distance(o2.getSijainti()) < 10) {
 	    System.out.println("OSUMA!");
 	    return true;
 	}
