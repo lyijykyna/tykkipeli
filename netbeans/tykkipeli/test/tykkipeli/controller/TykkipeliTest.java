@@ -197,6 +197,8 @@ public class TykkipeliTest {
 	//v_0=Math.sqrt(1000);
 	//koro=45°
 	Tykkipeli peli = new Tykkipeli();
+	Maailma maa = new Maailma();
+	peli.setPeliMaailma(maa);
 	peli.lisaaPelaaja(p1);
 	Lentorata rata = peli.pelaajaAmpuu(p1, 45, Math.sqrt(1000));
 	while (rata.getAmmus().getSijainti().y >= 0 && rata.getAmmus().getSijainti().x < 200) {
