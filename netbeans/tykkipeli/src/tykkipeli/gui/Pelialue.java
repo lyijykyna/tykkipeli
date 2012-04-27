@@ -47,7 +47,8 @@ public class Pelialue extends JPanel {
                 g.setColor(Color.BLUE);
             else if(o.equals(p2.getTykki()))
                 g.setColor(Color.RED);
-	    g.fillRect(o.getSijainti().x, o.getSijainti().y, 20, 20);
+	    //g.fillRect(o.getSijainti().x, o.getSijainti().y, 20, 20);
+	    g.fillRect(o.getSijainti().x, tykkipeli.getPeliMaailma().getKORKEUS()-o.getSijainti().y-20, 20, 20);
             g.setColor(Color.BLACK);
         }
     }
