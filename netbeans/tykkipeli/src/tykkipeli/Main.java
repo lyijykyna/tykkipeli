@@ -18,6 +18,7 @@ public class Main {
      */
     public static void main(String[] args) {
 	
+        //TODO nämä johonkin olioon?
 	Tykkipeli tykkipeli = new Tykkipeli();
 	tykkipeli.setPeliMaailma(new Maailma());
 	System.out.println("Aloitetaan ohjelma");
@@ -29,6 +30,8 @@ public class Main {
 	    System.out.println("Lisättiin pelaajalle tykki");
             tykkipeli.getPeliMaailma().lisaaObjekti(tykkipeli.getPelaajat().get(i).getTykki());
 	    //tykkipeli.arvoPelaajienPaikat();
+	    for(Pelaaja p : tykkipeli.getPelaajat())
+		p.setSijainti(p.getSijainti().x, p.getSijainti().y);
 	    System.out.println("Sijoitettiin pelaajan tykki pisteeseen"+tykkipeli.getPelaajat().get(i).getTykki().getSijainti());
 	    System.out.println("---------------------------------------------");
 	}
