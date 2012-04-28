@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package tykkipeli.controller;
 
 import java.util.ArrayList;
@@ -18,6 +14,8 @@ import tykkipeli.model.Tykki;
  */
 public class MaailmaTest {
     
+    Maailma testiMaailma;
+    
     public MaailmaTest() {
     }
 
@@ -31,6 +29,7 @@ public class MaailmaTest {
     
     @Before
     public void setUp() {
+        testiMaailma = new Maailma();
     }
     
     @After
@@ -43,9 +42,8 @@ public class MaailmaTest {
     @Test
     public void testGetObjektitTyhja() {
 	System.out.println("getObjektitTyhja");
-	Maailma instance = new Maailma();
 	List expResult = new ArrayList();
-	List result = instance.getObjektit();
+        List result = testiMaailma.getObjektit();
 	assertEquals(expResult, result);
     }
     
@@ -55,13 +53,12 @@ public class MaailmaTest {
     @Test
     public void testLisaaObjektiAmmus() {
 	System.out.println("lisaaObjekti");
-	Maailma instance = new Maailma();
 	PeliObjekti o = new Ammus();
 	Ammus a = new Ammus();
 	boolean testitulos = false;
-	instance.lisaaObjekti(o);
-	instance.lisaaObjekti(a);
-	if(instance.getObjektit().get(0).equals(o) && instance.getObjektit().get(1).equals(a))
+	testiMaailma.lisaaObjekti(o);
+	testiMaailma.lisaaObjekti(a);
+	if(testiMaailma.getObjektit().get(0).equals(o) && testiMaailma.getObjektit().get(1).equals(a))
 	    testitulos = true;
 	assertTrue(testitulos);
     }
@@ -69,13 +66,12 @@ public class MaailmaTest {
     @Test
     public void testLisaaObjektiTykki() {
 	System.out.println("lisaaObjekti");
-	Maailma instance = new Maailma();
 	PeliObjekti o = new Tykki();
 	Tykki a = new Tykki();
 	boolean testitulos = false;
-	instance.lisaaObjekti(o);
-	instance.lisaaObjekti(a);
-	if(instance.getObjektit().get(0).equals(o) && instance.getObjektit().get(1).equals(a))
+	testiMaailma.lisaaObjekti(o);
+	testiMaailma.lisaaObjekti(a);
+	if(testiMaailma.getObjektit().get(0).equals(o) && testiMaailma.getObjektit().get(1).equals(a))
 	    testitulos = true;
 	assertTrue(testitulos);
     }
@@ -83,13 +79,12 @@ public class MaailmaTest {
     @Test
     public void testLisaaObjektiTykkijaAmmus() {
 	System.out.println("lisaaObjekti");
-	Maailma instance = new Maailma();
 	PeliObjekti o = new Tykki();
 	Ammus a = new Ammus();
 	boolean testitulos = false;
-	instance.lisaaObjekti(o);
-	instance.lisaaObjekti(a);
-	if(instance.getObjektit().get(0).equals(o) && instance.getObjektit().get(1).equals(a))
+	testiMaailma.lisaaObjekti(o);
+	testiMaailma.lisaaObjekti(a);
+	if(testiMaailma.getObjektit().get(0).equals(o) && testiMaailma.getObjektit().get(1).equals(a))
 	    testitulos = true;
 	assertTrue(testitulos);
     }
@@ -100,7 +95,6 @@ public class MaailmaTest {
     @Test
     public void testGetObjektit() {
 	System.out.println("getObjektit");
-	Maailma instance = new Maailma();
 	List<PeliObjekti> testilista = new ArrayList();
 	Ammus a = new Ammus();
 	Tykki t = new Tykki();
@@ -108,10 +102,10 @@ public class MaailmaTest {
 	testilista.add(a);
 	//muista lisätä Maailma-instanssiinkin samassa järjestyksessä, ellei lisätä
 	//jotain sorttia
-	instance.lisaaObjekti(t);
-	instance.lisaaObjekti(a);
+	testiMaailma.lisaaObjekti(t);
+	testiMaailma.lisaaObjekti(a);
 	List expResult = testilista;
-	List result = instance.getObjektit();
+	List result = testiMaailma.getObjektit();
 	assertEquals(expResult, result);
     }
 
@@ -122,15 +116,14 @@ public class MaailmaTest {
     public void testSetObjektit() {
 	System.out.println("setObjektit");
 	List<PeliObjekti> objektit = null;
-	Maailma instance = new Maailma();
 	List<PeliObjekti> testilista = new ArrayList();
 	Ammus a = new Ammus();
 	Tykki t = new Tykki();
 	testilista.add(t);
 	testilista.add(a);
 	objektit=testilista;
-	instance.setObjektit(objektit);
-	//eikö tähän tarvitse asserttia kun ei Netbeansin juttu ole lisännyt?
+	testiMaailma.setObjektit(objektit);
+        assertEquals(testilista, testiMaailma.getObjektit());
     }
 
     /**
@@ -152,7 +145,7 @@ public class MaailmaTest {
 	System.out.println("setKORKEUS");
 	int KORKEUS = 0;
 	Maailma.setKORKEUS(KORKEUS);
-	//eikö tässä oikeasti tarvitse asserttia?
+	assertEquals(KORKEUS,Maailma.getKORKEUS());
     }
 
     /**
@@ -172,9 +165,9 @@ public class MaailmaTest {
     @Test
     public void testSetLEVEYS() {
 	System.out.println("setLEVEYS");
-	int LEVEYS = 0;
+	int LEVEYS = 666;
 	Maailma.setLEVEYS(LEVEYS);
-	//ei asserttia
+        assertEquals(LEVEYS,Maailma.getLEVEYS());
     }
 
     /**
@@ -185,9 +178,8 @@ public class MaailmaTest {
 	System.out.println("tormaysTarkistus");
 	PeliObjekti o1 = new Ammus(0,0);
 	PeliObjekti o2 = new Tykki(0,0);
-	Maailma instance = new Maailma();
 	boolean expResult = true;
-	boolean result = instance.tormaysTarkistus(o1, o2);
+	boolean result = testiMaailma.tormaysTarkistus(o1, o2);
 	assertEquals(expResult, result);
     }
     
@@ -196,9 +188,8 @@ public class MaailmaTest {
 	System.out.println("tormaysTarkistus");
 	PeliObjekti o1 = new Ammus(0,0);
 	PeliObjekti o2 = new Tykki(666,-111);
-	Maailma instance = new Maailma();
 	boolean expResult = false;
-	boolean result = instance.tormaysTarkistus(o1, o2);
+	boolean result = testiMaailma.tormaysTarkistus(o1, o2);
 	assertEquals(expResult, result);
     }
 }
