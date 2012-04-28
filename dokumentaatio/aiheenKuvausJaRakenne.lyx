@@ -1,0 +1,130 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Description
+Aihe: tykkipeli
+\end_layout
+
+\begin_layout Standard
+Toteutetaan kahden pelaajan tietokonepeli, jossa pelaajat yrittävät voittaa
+ pelin osumalla vastustajan tykkiin.
+ Pelissä mallinnetaan maailmaa, jossa on maata kohti vaikuttava painovoima
+ ja tykkien ampumat ammukset noudattavat vinon heittoliikkeen fysiikkaa.
+ 
+\end_layout
+
+\begin_layout Description
+Toiminta
+\end_layout
+
+\begin_layout Standard
+Pelaajille arvotaan alussa paikat pelimaailmasta.
+ Tämän jälkeen pelaajat ampuvat tykillään omalla vuorollaan.
+ Pelaaja määrää tykin korokulman sekä tehon, jolla tykki ampuu.
+ Korokulma annetaan asteina suhteessa pelimaailmaan; 0° osoittaa ruudun
+ oikeaan reunaan, 90° suoraan ylöspäin, 180° ruudun vasempaan reunaan jne.
+ Teho tarkoittaa likipitäen ammuksen lähtönopeutta m/s korokulman osoittamaan
+ suuntaan.
+ Yksi pelimaailman yksikkö vastaa metriä.
+ Piirtäessä pelimaailmaa yksi pikseli vastaa yhtä metriä.
+\end_layout
+
+\begin_layout Standard
+Vuoron aikana pelaaja päättää hyvät arvot tykkinsä korokulmaan ja ampumistehoon
+ ja klikkaa 
+\begin_inset Quotes eld
+\end_inset
+
+Ammu
+\begin_inset Quotes erd
+\end_inset
+
+ nappulaa pelin käyttöliittymässä.
+ Ammuksen lentorata lasketaan pelaajaan syöttäminen arvojen perusteella
+ ja tarkistetaan mahdollinen osuma tai ammuksen lentäminen ulos pelimaailmasta.
+ Pelaajan ampuman ammuksen osuessa tykkiin poistuu vastustaja pelistä ja
+ pelaaja voittaa pelin.
+ Jos ammus menee ohitse vaihtuu vuoro toiselle pelaajalle.
+\end_layout
+
+\begin_layout Standard
+Peli jatkuu niin kauan, kunnes toinen pelaaja voittaa tai pelaajat päättävät
+ sulkea pelin.
+\end_layout
+
+\begin_layout Description
+Jatkokehitysideoita
+\end_layout
+
+\begin_layout Standard
+Peli on tällä hetkellä melko helppo voittaa; optimaalinen korokulma tasaisella
+ maalla on aina 45° ja teho on helppo ja nopea haarukoida muutaman vuoron
+ aikana oikeaan.
+ Tykkipeleissä on yleensä vaihteleva ja kumpuileva maasto ja joskus tuuli,
+ joka vaikuttaa ammuksen lentorataan.
+ Ensimmäinen vaihtoehto jatkokehitykseen luultavasti olisi maaston lisääminen
+ esimerkiksi kahdella erilaisella kumpuilevalla kartalla tai täysin satunnaisest
+i pelistä toiseen luotavalla kartalla.
+ Peliin voisi myös lisätä tuhoutuvan maaston.
+\end_layout
+
+\end_body
+\end_document
