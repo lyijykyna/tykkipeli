@@ -167,6 +167,16 @@ Rakenne
 \end_layout
 
 \begin_layout Standard
+\begin_inset Graphics
+	filename sekvenssikaavio_pelaajanvuoro.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Peli alkaa luomalla Tykkipeli-luokasta ilmentymä, joka pitää sisällään ilmentymä
 n Maailma-luokasta.
  Jokaiselle pelaajalle luodaan oma olio Pelaaja-luokasta.

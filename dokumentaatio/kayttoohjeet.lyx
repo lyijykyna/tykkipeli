@@ -1,0 +1,137 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Part*
+Käyttöohjeet
+\end_layout
+
+\begin_layout Subsection*
+Pelin käynnistys
+\end_layout
+
+\begin_layout Standard
+Peli käynnistetään menemällä komentotulkilla kansioon, jossa tykkipeli.jar
+ sijaitsee ja antamalla komento 
+\end_layout
+
+\begin_layout Standard
+java -jar 
+\begin_inset Quotes eld
+\end_inset
+
+tykkipeli.jar
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Pelin pelaaminen
+\end_layout
+
+\begin_layout Standard
+Pelaajat pelaavat peliä samalta koneelta vuorotellen.
+ Pelaaja määrittää tykille haluamansa ampumistehon ja korokulman.
+ Kun pelaaja on valmis ampumaan ja päättämään vuoronsa, painaa hän nappulaa
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Ammu
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Peli laskee ammuksen lentoradan ja merkitsee osuman.
+ Jos osuma osuu vastapelaajan tykkiin on pelaaja voittanut pelin.
+ Jos ammus ei osunut tykkiin vaihtuu vuoro toiselle pelaajalle.
+\end_layout
+
+\begin_layout Subsection*
+Peli lopettaminen
+\end_layout
+
+\begin_layout Standard
+Pelin voi lopettaa painamalla peli-ikkunan yläkulmassa olevaa nappulaa,
+ jolla kyseisen järjestelmän ohjelmat yleensä sammutetaan.
+ Nappulan ulkoasu voi vaihdella järjestelmästä riippuen, mutta yleensä se
+ on 
+\begin_inset Quotes eld
+\end_inset
+
+x
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Muuta
+\end_layout
+
+\begin_layout Standard
+Pelin aikana ohjeen saa näkyviin myös etsimällä valikosta Ohje->Apua.
+\end_layout
+
+\end_body
+\end_document
