@@ -68,7 +68,7 @@ public class Ikkuna implements Runnable{
                        "");
         teksti.setEditable(false);
         apuIkkuna.getContentPane().add(teksti);
-        apuIkkuna.setTitle("Tykkpelin ohje");
+        apuIkkuna.setTitle("Tykkipelin ohje");
         apuIkkuna.setLocationRelativeTo(frame);
         apuIkkuna.pack();
         apuIkkuna.setSize(new Dimension(300,200));

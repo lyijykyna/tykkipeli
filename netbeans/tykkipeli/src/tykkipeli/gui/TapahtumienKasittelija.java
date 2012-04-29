@@ -37,7 +37,6 @@ public class TapahtumienKasittelija implements ActionListener{
         vuorossa.setTeho(Double.parseDouble(teho.getText()));
         vuorossa.setKoro(Double.parseDouble(koro.getText()));
         Lentorata rata = peli.pelaajaAmpuu(vuorossa, vuorossa.getKoro(), vuorossa.getTeho());
-        Ammus viimeisin = new Ammus();
 	while(rata.getAmmus().getSijainti().y >= 0) {
             rata.iteroiRata();
             //System.out.println(""+rata.getAmmus().getSijainti());
@@ -46,10 +45,9 @@ public class TapahtumienKasittelija implements ActionListener{
             else
                 peli.getPeliMaailma().tormaysTarkistus(rata.getAmmus(), peli.getPelaajat().get(0));
 	    //peli.getPeliMaailma().lisaaObjekti(rata.getAmmus());
-            viimeisin = rata.getAmmus();
             pelialue.repaint();
         }
-        peli.getPeliMaailma().lisaaObjekti(viimeisin);
+        peli.getPeliMaailma().lisaaObjekti(rata.getAmmus());
         this.peli.muutaVuoro();
         pelaaja.setText(peli.getVuorossaOlevaPelaaja().getNimi());
         teho.setText(""+peli.getVuorossaOlevaPelaaja().getTeho());
