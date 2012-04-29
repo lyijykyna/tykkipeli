@@ -11,7 +11,6 @@ import tykkipeli.model.Ammus;
 public class Lentorata {
     private double putoamiskiihtyvyys = 10;
     private double aikaAskel = 0.1; //0.1 on melko hyvä 640x480 maailmalle
-    private Maailma maailma;
     private int alkuX;
     private int alkuY;
     private double alkuNopeusX;
@@ -22,16 +21,13 @@ public class Lentorata {
 
     /**
      * Parametrillinen konstruktori Lentorata-luokalle
-     * @param maailma Maailma-luokan ilmentymä eli pelimaailma, jossa lentorata
-     *          lasketaan
      * @param x0 ammutun ammuksen x-alkukoordinaatti
      * @param y0 ammutun ammuksen y-alkukoordinaatti
      * @param v0x ammutun ammuksen x-suuntainen alkunopeus
      * @param v0y ammutun ammuksen y-suuntainen alkunopeus
      * @param t0 ampumistapahtuman alkuhetki, yleensä 0
      */
-    public Lentorata(Maailma maailma, int x0, int y0, double v0x, double v0y, int t0) {
-        this.maailma = maailma;
+    public Lentorata(int x0, int y0, double v0x, double v0y, int t0) {
         this.alkuX = x0;
         this.alkuY = y0;
         this.alkuNopeusX = v0x;
@@ -71,22 +67,6 @@ public class Lentorata {
      */
     public void setAikaAskel(double aikaAskel) {
         this.aikaAskel = aikaAskel;
-    }
-
-    /**
-     * Metodi antaa oliolle annetun Maailma-luokan ilmentymän
-     * @return pelimaailma
-     */
-    public Maailma getMaailma() {
-        return maailma;
-    }
-
-    /**
-     * Metodilla asetetaan Lentorata-olioon liittyvä Maailma-luokan ilmentymä
-     * @param maailma
-     */
-    public void setMaailma(Maailma maailma) {
-        this.maailma = maailma;
     }
     
     /**
