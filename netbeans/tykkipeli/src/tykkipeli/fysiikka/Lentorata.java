@@ -9,8 +9,8 @@ import tykkipeli.model.Ammus;
  * 
  */
 public class Lentorata {
-    private double putoamiskiihtyvyys = 10;
-    private double aikaAskel = 0.1; //0.1 on melko hyvä 640x480 maailmalle
+    private double putoamiskiihtyvyys; //10
+    private double aikaAskel; //0.1 on melko hyvä 640x480 maailmalle
     private int alkuX;
     private int alkuY;
     private double alkuNopeusX;
@@ -28,6 +28,8 @@ public class Lentorata {
      * @param t0 ampumistapahtuman alkuhetki, yleensä 0
      */
     public Lentorata(int x0, int y0, double v0x, double v0y, int t0) {
+        this.putoamiskiihtyvyys = 10;
+        this.aikaAskel = 0.1;
         this.alkuX = x0;
         this.alkuY = y0;
         this.alkuNopeusX = v0x;

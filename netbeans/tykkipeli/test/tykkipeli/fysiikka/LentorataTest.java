@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package tykkipeli.fysiikka;
 
 import java.awt.Point;
@@ -16,6 +12,8 @@ import tykkipeli.model.Ammus;
  */
 public class LentorataTest {
     
+    Lentorata testiRata;
+    
     public LentorataTest() {
     }
 
@@ -29,6 +27,7 @@ public class LentorataTest {
     
     @Before
     public void setUp() {
+        testiRata = new Lentorata(0, 0, 0, 0, 0);
     }
     
     @After
@@ -39,10 +38,10 @@ public class LentorataTest {
      * Test of getPutoamiskiihtyvyys method, of class Lentorata.
      */
     @Test
-    public void testGetPUTOAMISKIIHTYVYYS() {
-	System.out.println("getPUTOAMISKIIHTYVYYS");
-	double expResult = 10.0; //TODO: static jutut selväksi
-	double result = Lentorata.getPutoamiskiihtyvyys();
+    public void testGetPutoamiskiihtyvyys() {
+	System.out.println("getPutoamiskiihtyvyys");
+	double expResult = 10.0;
+	double result = testiRata.getPutoamiskiihtyvyys();
 	assertEquals(expResult, result, 0.0);
     }
 
@@ -50,11 +49,11 @@ public class LentorataTest {
      * Test of setPutoamiskiihtyvyys method, of class Lentorata.
      */
     @Test
-    public void testSetPUTOAMISKIIHTYVYYS() {
-	System.out.println("setPUTOAMISKIIHTYVYYS");
-	double PUTOAMISKIIHTYVYYS = 0.0;
-	Lentorata.setPutoamiskiihtyvyys(PUTOAMISKIIHTYVYYS);
-	assertEquals(PUTOAMISKIIHTYVYYS, Lentorata.getPutoamiskiihtyvyys(), 0.0);
+    public void testSetPutoamiskiihtyvyys() {
+	System.out.println("setPutoamiskiihtyvyys");
+	double putoamiskiihtyvyys = 0.0;
+	testiRata.setPutoamiskiihtyvyys(putoamiskiihtyvyys);
+	assertEquals(putoamiskiihtyvyys, testiRata.getPutoamiskiihtyvyys(), 0.0);
     }
 
     /**
@@ -64,7 +63,7 @@ public class LentorataTest {
     public void testGetAikaAskel() {
 	System.out.println("getAikaAskel");
 	double expResult = 0.1;
-	double result = Lentorata.getAikaAskel();
+	double result = testiRata.getAikaAskel();
 	assertEquals(expResult, result, 0.0);
     }
 
@@ -75,8 +74,8 @@ public class LentorataTest {
     public void testSetAikaAskel() {
 	System.out.println("setAikaAskel");
 	double aikaAskel = 0.0;
-	Lentorata.setAikaAskel(aikaAskel);
-	assertEquals(aikaAskel, Lentorata.getAikaAskel(), 0.0);
+	testiRata.setAikaAskel(aikaAskel);
+	assertEquals(aikaAskel, testiRata.getAikaAskel(), 0.0);
     }
 
     /**
@@ -86,9 +85,8 @@ public class LentorataTest {
     public void testGetDt() {
 	System.out.println("getDt");
         Maailma testimaailma = new Maailma();
-	Lentorata instance = new Lentorata(testimaailma,0,0,0,0,0);
 	double expResult = 0.0;
-	double result = instance.getAjanMuutos();
+	double result = testiRata.getAjanMuutos();
 	assertEquals(expResult, result, 0.0);
     }
 
@@ -99,23 +97,19 @@ public class LentorataTest {
     public void testSetDt() {
 	System.out.println("setDt");
 	int dt = 700;
-        Maailma testimaailma = new Maailma();
-	Lentorata instance = new Lentorata(testimaailma,0,0,0,0,0);
-	instance.setAjanMuutos(dt);
-	assertEquals(dt, instance.getAjanMuutos(), 0.0);
+	testiRata.setAjanMuutos(dt);
+	assertEquals(dt, testiRata.getAjanMuutos(), 0.0);
     }
 
     /**
      * Test of getT0 method, of class Lentorata.
      */
     @Test
-    public void testGetT0() {
-	System.out.println("getT0");
-	int aikaNolla = 111;
-        Maailma testimaailma = new Maailma();
-	Lentorata instance = new Lentorata(testimaailma,0, 0, 0, 0, aikaNolla);
+    public void testGetAlkuAika() {
+	System.out.println("getAlkuAika");
+	int aikaNolla = 0;
 	int expResult = aikaNolla;
-	int result = instance.getT0();
+	int result = testiRata.getAlkuAika();
 	assertEquals(expResult, result);
     }
 
@@ -123,25 +117,21 @@ public class LentorataTest {
      * Test of setT0 method, of class Lentorata.
      */
     @Test
-    public void testSetT0() {
-	System.out.println("setT0");
+    public void testSetAlkuAika() {
+	System.out.println("setAlkuAika");
 	int t0 = 6;
-        Maailma testimaailma = new Maailma();
-	Lentorata instance = new Lentorata(testimaailma,0, 0, 0, 0, 0);
-	instance.setT0(t0);
-	assertEquals(t0, instance.getT0());
+	testiRata.setAlkuAika(t0);
+	assertEquals(t0, testiRata.getAlkuAika());
     }
 
     /**
      * Test of getV0x method, of class Lentorata.
      */
     @Test
-    public void testGetV0x() {
-	System.out.println("getV0x");
-        Maailma testimaailma = new Maailma();
-	Lentorata instance = new Lentorata(testimaailma,0, 0, 0, 0, 0);
+    public void testGetAlkuNopeusX() {
+	System.out.println("getAlkuNopeusX");
 	double expResult = 0.0;
-	double result = instance.getV0x();
+	double result = testiRata.getAlkuNopeusX();
 	assertEquals(expResult, result, 0.0);
     }
 
@@ -149,24 +139,21 @@ public class LentorataTest {
      * Test of setV0x method, of class Lentorata.
      */
     @Test
-    public void testSetV0x() {
-	System.out.println("setV0x");
+    public void testSetAlkuNopeusX() {
+	System.out.println("setAlkuNopeusX");
 	double v0 = 3;
-        Maailma testimaailma = new Maailma();
-	Lentorata instance = new Lentorata(testimaailma,0, 0, 0, 0, 0);
-	instance.setV0x(v0);
-	assertEquals(v0, instance.getV0x(), 0.0);
+	testiRata.setAlkuNopeusX(v0);
+	assertEquals(v0, testiRata.getAlkuNopeusX(), 0.0);
     }
 
     /**
      * Test of getX0 method, of class Lentorata.
      */
     @Test
-    public void testGetX0() {
-	System.out.println("getX0");
-	Lentorata instance = new Lentorata(0, 0, 0, 0, 0);
+    public void testGetAlkuX() {
+	System.out.println("getAlkuX");
 	int expResult = 0;
-	int result = instance.getX0();
+	int result = testiRata.getAlkuX();
 	assertEquals(expResult, result);
     }
 
@@ -174,11 +161,10 @@ public class LentorataTest {
      * Test of getV0y method, of class Lentorata.
      */
     @Test
-    public void testGetV0y() {
-	System.out.println("getV0y");
-	Lentorata instance = new Lentorata(0, 0, 0, 0, 0);
+    public void testGeAlkuNopeusY() {
+	System.out.println("getAlkuNopeusY");
 	double expResult = 0.0;
-	double result = instance.getV0y();
+	double result = testiRata.getAlkuNopeusY();
 	assertEquals(expResult, result, 0.0);
     }
 
@@ -186,35 +172,32 @@ public class LentorataTest {
      * Test of setV0y method, of class Lentorata.
      */
     @Test
-    public void testSetV0y() {
-	System.out.println("setV0y");
+    public void testSetAlkuNopeusY() {
+	System.out.println("setAlkuNopeusY");
 	double v0y = 300;
-	Lentorata instance = new Lentorata(0, 0, 0, 0, 0);
-	instance.setV0y(v0y);
-	assertEquals(v0y, instance.getV0y(), 0.0);
+	testiRata.setAlkuNopeusY(v0y);
+	assertEquals(v0y, testiRata.getAlkuNopeusY(), 0.0);
     }
 
     /**
      * Test of setX0 method, of class Lentorata.
      */
     @Test
-    public void testSetX0() {
-	System.out.println("setX0");
+    public void testSetAlkuX() {
+	System.out.println("setAlkuX");
 	int x0 = -71;
-	Lentorata instance = new Lentorata(0, 0, 0, 0, 0);
-	instance.setX0(x0);
-	assertEquals(x0, instance.getX0());
+	testiRata.setAlkuX(x0);
+	assertEquals(x0, testiRata.getAlkuX());
     }
 
     /**
      * Test of getY0 method, of class Lentorata.
      */
     @Test
-    public void testGetY0() {
-	System.out.println("getY0");
-	Lentorata instance = new Lentorata(0, 100, 0, 0, 0);
-	int expResult = 100;
-	int result = instance.getY0();
+    public void testGetAlkuY() {
+	System.out.println("getAlkuY");
+	int expResult = 0;
+	int result = testiRata.getAlkuY();
 	assertEquals(expResult, result);
     }
 
@@ -222,12 +205,11 @@ public class LentorataTest {
      * Test of setY0 method, of class Lentorata.
      */
     @Test
-    public void testSetY0() {
-	System.out.println("setY0");
+    public void testSetAlkuY() {
+	System.out.println("setAlkuY");
 	int y0 = 99;
-	Lentorata instance = new Lentorata(0, 0, 0, 0, 0);
-	instance.setY0(y0);
-	assertEquals(y0, instance.getY0());
+	testiRata.setAlkuY(y0);
+	assertEquals(y0, testiRata.getAlkuY());
     }
 
     /**
@@ -270,7 +252,13 @@ public class LentorataTest {
      * Test of iteroiRata method, of class Lentorata.
      */
     @Test
-    public void testIteroiRata() {
-	fail("tarvitsee testejä");
+    public void testIteroiRataAikaKuluuOikein() {
+	int kierroksia = 13;
+        testiRata.setAmmus(new Ammus());
+        double testiAika = testiRata.getAikaAskel()*kierroksia;
+        for(int i=0;i<kierroksia;i++) {
+            testiRata.iteroiRata();
+        }
+        assertEquals(testiAika, testiRata.getAjanMuutos(),0.01);
     }
 }
