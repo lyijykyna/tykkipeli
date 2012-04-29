@@ -133,7 +133,7 @@ public class MaailmaTest {
     public void testGetKORKEUS() {
 	System.out.println("getKORKEUS");
 	int expResult = 480; //tai mikä ikinä laitetaankaan pelimaailman korkeudeksi
-	int result = Maailma.getKORKEUS();
+	int result = testiMaailma.getKorkeus();
 	assertEquals(expResult, result);
     }
 
@@ -144,8 +144,8 @@ public class MaailmaTest {
     public void testSetKORKEUS() {
 	System.out.println("setKORKEUS");
 	int KORKEUS = 0;
-	Maailma.setKORKEUS(KORKEUS);
-	assertEquals(KORKEUS,Maailma.getKORKEUS());
+	testiMaailma.setKorkeus(KORKEUS);
+	assertEquals(KORKEUS,testiMaailma.getKorkeus());
     }
 
     /**
@@ -155,7 +155,7 @@ public class MaailmaTest {
     public void testGetLEVEYS() {
 	System.out.println("getLEVEYS");
 	int expResult = 640;
-	int result = Maailma.getLEVEYS();
+	int result = testiMaailma.getLeveys();
 	assertEquals(expResult, result);
     }
 
@@ -166,8 +166,8 @@ public class MaailmaTest {
     public void testSetLEVEYS() {
 	System.out.println("setLEVEYS");
 	int LEVEYS = 666;
-	Maailma.setLEVEYS(LEVEYS);
-        assertEquals(LEVEYS,Maailma.getLEVEYS());
+	testiMaailma.setLeveys(LEVEYS);
+        assertEquals(LEVEYS,testiMaailma.getLeveys());
     }
 
     /**

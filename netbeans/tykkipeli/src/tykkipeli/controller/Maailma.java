@@ -8,15 +8,15 @@ import tykkipeli.model.PeliObjekti;
 import tykkipeli.model.Tykki;
 
 /**
+ *Pelimaailman rajat sekä objektit sisältävä luokka.
  *
- * @author 
  */
 public class Maailma {
     
     private List<PeliObjekti> objektit;
     //TODO: taitaa olla static vähän väärä ja pitäisi ehkä olla final
-    private static int LEVEYS = 640;
-    private static int KORKEUS = 480;
+    private int leveys = 640;
+    private int korkeus = 480;
 
     
     public Maailma() {
@@ -45,20 +45,20 @@ public class Maailma {
 	this.objektit.add(lisattava);
     }
     
-    public static int getKORKEUS() {
-	return KORKEUS;
+    public int getKorkeus() {
+	return korkeus;
     }
 
-    public static void setKORKEUS(int KORKEUS) {
-	Maailma.KORKEUS = KORKEUS;
+    public void setKorkeus(int korkeus) {
+	this.korkeus = korkeus;
     }
 
-    public static int getLEVEYS() {
-	return LEVEYS;
+    public int getLeveys() {
+	return leveys;
     }
 
-    public static void setLEVEYS(int LEVEYS) {
-	Maailma.LEVEYS = LEVEYS;
+    public void setLeveys(int leveys) {
+	this.leveys = leveys;
     }
     
     public boolean tormaysTarkistus(PeliObjekti o1, PeliObjekti o2) {

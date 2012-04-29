@@ -92,7 +92,7 @@ public class Tykkipeli {
 	int x = 0;
 	int y = 0;
 	int min = 0;
-	int max = this.peliMaailma.getLEVEYS()/getPelaajienLukumaara();
+	int max = this.peliMaailma.getLeveys()/getPelaajienLukumaara();
 	Random random = new Random();
 	for(Pelaaja p : this.pelaajat) {
 	    x = random.nextInt(max-min)+min;
@@ -101,7 +101,7 @@ public class Tykkipeli {
 	    //p.getTykki().setSijainti(new Point(x,y));
 	    p.setSijainti(x,y);
 	    min = max;
-	    max += this.peliMaailma.getLEVEYS()/getPelaajienLukumaara();
+	    max += this.peliMaailma.getLeveys()/getPelaajienLukumaara();
 	}
     }
     

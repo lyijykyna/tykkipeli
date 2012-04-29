@@ -19,7 +19,7 @@ public class Pelialue extends JPanel {
     
     public Pelialue(Tykkipeli tykkipeli) {
         this.tykkipeli = tykkipeli;
-        this.setPreferredSize(new Dimension(tykkipeli.getPeliMaailma().getLEVEYS(),tykkipeli.getPeliMaailma().getKORKEUS()));
+        this.setPreferredSize(new Dimension(tykkipeli.getPeliMaailma().getLeveys(),tykkipeli.getPeliMaailma().getKorkeus()));
         this.setBackground(Color.white);
     }
 
@@ -48,7 +48,7 @@ public class Pelialue extends JPanel {
             else if(o.equals(p2.getTykki()))
                 g.setColor(Color.RED);
 	    //g.fillRect(o.getSijainti().x, o.getSijainti().y, 20, 20);
-	    g.fillRect(o.getSijainti().x, tykkipeli.getPeliMaailma().getKORKEUS()-o.getSijainti().y-20, 20, 20);
+	    g.fillRect(o.getSijainti().x, tykkipeli.getPeliMaailma().getKorkeus()-o.getSijainti().y-20, 20, 20);
             g.setColor(Color.BLACK);
         }
     }

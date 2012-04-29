@@ -9,13 +9,11 @@ import tykkipeli.model.Pelaaja;
 import tykkipeli.model.Tykki;
 
 /**
+ *Tykkipelin alustava ja graafisen käyttöliittymän käynnistävä pääluokka.
  *
- * @author
  */
 public class Main {
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String[] args) {
 	
         //TODO nämä johonkin olioon?

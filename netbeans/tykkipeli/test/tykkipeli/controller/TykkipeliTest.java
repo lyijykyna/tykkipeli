@@ -160,6 +160,9 @@ public class TykkipeliTest {
     public void testArvoPelaajienPaikat2Pelaaja() {
 	System.out.println("arvoPelaajienPaikat");
 	Tykkipeli instance = new Tykkipeli();
+        Maailma testiMaailma = new Maailma();
+        testiMaailma.setLeveys(640);
+        instance.setPeliMaailma(testiMaailma);
 	instance.lisaaPelaaja(new Pelaaja("p1"));
 	instance.lisaaPelaaja(new Pelaaja("p2"));
 	instance.arvoPelaajienPaikat();
