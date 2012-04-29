@@ -14,7 +14,6 @@ import tykkipeli.model.Tykki;
 public class Maailma {
     
     private List<PeliObjekti> objektit;
-    //TODO: taitaa olla static vähän väärä ja pitäisi ehkä olla final
     private int leveys = 640;
     private int korkeus = 480;
 

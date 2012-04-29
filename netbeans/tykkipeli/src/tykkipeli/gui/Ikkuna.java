@@ -1,6 +1,8 @@
 package tykkipeli.gui;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 import tykkipeli.controller.Tykkipeli;
 
@@ -23,6 +25,8 @@ public class Ikkuna implements Runnable{
         frame.setPreferredSize(new Dimension(800,600));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         
+        frame.setJMenuBar(luoApuaMenu());
+        
         luoKomponentit(frame.getContentPane());
         
         frame.pack();
@@ -35,6 +39,49 @@ public class Ikkuna implements Runnable{
         Pelialue pelialue = new Pelialue(peli);
         container.add(pelialue,BorderLayout.CENTER);
         container.add(luoTykinHallinta(pelialue),BorderLayout.SOUTH);
+        
+    }
+    
+    private JMenuBar luoApuaMenu() {
+        JMenuBar menuBar = new JMenuBar();
+        JMenu menu = new JMenu("Ohje");
+        JMenuItem ohje = new JMenuItem("Apua");
+        menu.add(ohje);
+        menuBar.add(menu);
+        OhjeDialogi ohjeD = new OhjeDialogi();
+        ohje.addActionListener(ohjeD);
+        return menuBar;
+    }
+    
+    private JDialog luoApuIkkuna() {
+        JDialog apuIkkuna = new JDialog();
+        apuIkkuna.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
+        JTextPane teksti = new JTextPane();
+        teksti.setText("Tykkipeli\n\n" + 
+                       "Pelaaja asettaa tykkinsä ampumistehon ja korokulman ja " +
+                       "ampuu tykillä painamalla \"Ammu\" nappulaa. \n" +
+                       "Pelaaja, joka osuu ensimmäisenä toisen pelaajan tykkiin" +
+                       "voittaa pelin. \n" +
+                       "HUOM! Oikeanpuolimmaisen pelaajan pitää huomioida, että" +
+                       "hänen tykkinsä korokulman pitää olla aina yli 90° jos hän" +
+                       "ampua kohti toista tykkiä!" +
+                       "");
+        teksti.setEditable(false);
+        apuIkkuna.getContentPane().add(teksti);
+        apuIkkuna.setTitle("Tykkpelin ohje");
+        apuIkkuna.setLocationRelativeTo(frame);
+        apuIkkuna.pack();
+        apuIkkuna.setSize(new Dimension(300,200));
+        apuIkkuna.setVisible(true);
+        return apuIkkuna;
+    }
+    
+    private class OhjeDialogi implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+            luoApuIkkuna();
+        }
         
     }
     
