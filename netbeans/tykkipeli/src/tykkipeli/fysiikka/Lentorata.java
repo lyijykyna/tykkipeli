@@ -6,42 +6,42 @@ import tykkipeli.model.Ammus;
 
 
 public class Lentorata {
-    private static double PUTOAMISKIIHTYVYYS = 10;
-    private static double aikaAskel = 0.1; //0.1 on melko hyvä 640x480 maailmalle
+    private double putoamiskiihtyvyys = 10;
+    private double aikaAskel = 0.1; //0.1 on melko hyvä 640x480 maailmalle
     private Maailma maailma;
-    private int x0;
-    private int y0;
-    private double v0x;
-    private double v0y;
-    private int t0;
-    private double dt;
+    private int alkuX;
+    private int alkuY;
+    private double alkuNopeusX;
+    private double alkuNopeusY;
+    private int alkuAika;
+    private double ajanMuutos;
     private Ammus ammus;
 
     public Lentorata(Maailma maailma, int x0, int y0, double v0x, double v0y, int t0) {
         this.maailma = maailma;
-        this.x0 = x0;
-        this.y0 = y0;
-        this.v0x = v0x;
-        this.v0y = v0y;
-        this.t0 = t0;
+        this.alkuX = x0;
+        this.alkuY = y0;
+        this.alkuNopeusX = v0x;
+        this.alkuNopeusY = v0y;
+        this.alkuAika = t0;
     }
 
     
     
-    public static double getPUTOAMISKIIHTYVYYS() {
-        return PUTOAMISKIIHTYVYYS;
+    public double getPutoamiskiihtyvyys() {
+        return putoamiskiihtyvyys;
     }
 
-    public static void setPUTOAMISKIIHTYVYYS(double PUTOAMISKIIHTYVYYS) {
-        Lentorata.PUTOAMISKIIHTYVYYS = PUTOAMISKIIHTYVYYS;
+    public void setPutoamiskiihtyvyys(double putoamiskiihtyvyys) {
+        this.putoamiskiihtyvyys = putoamiskiihtyvyys;
     }
 
-    public static double getAikaAskel() {
+    public double getAikaAskel() {
         return aikaAskel;
     }
 
-    public static void setAikaAskel(double aikaAskel) {
-        Lentorata.aikaAskel = aikaAskel;
+    public void setAikaAskel(double aikaAskel) {
+        this.aikaAskel = aikaAskel;
     }
 
     public Maailma getMaailma() {
@@ -52,54 +52,52 @@ public class Lentorata {
         this.maailma = maailma;
     }
     
-    public double getDt() {
-        return dt;
+    public double getAjanMuutos() {
+        return ajanMuutos;
     }
 
-    public void setDt(int dt) {
-        this.dt = dt;
+    public void setAjanMuutos(int dt) {
+        this.ajanMuutos = dt;
     }
 
-    public int getT0() {
-        return t0;
+    public int getAlkuAika() {
+        return alkuAika;
     }
 
-    public void setT0(int t0) {
-        this.t0 = t0;
+    public void setAlkuAika(int alkuAika) {
+        this.alkuAika = alkuAika;
     }
 
-    public double getV0x() {
-        return v0x;
+    public double getAlkuNopeusX() {
+        return alkuNopeusX;
     }
 
-    public void setV0x(double v0) {
-        this.v0x = v0;
+    public void setAlkuNopeusX(double alkuNopeusX) {
+        this.alkuNopeusX = alkuNopeusX;
     }
 
-    public int getX0() {
-        return x0;
+    public double getAlkuNopeusY() {
+        return alkuNopeusY;
     }
 
-    public double getV0y() {
-        return v0y;
+    public void setAlkuNopeusY(double alkuNopeusY) {
+        this.alkuNopeusY = alkuNopeusY;
     }
 
-    public void setV0y(double v0y) {
-        this.v0y = v0y;
+    public int getAlkuX() {
+        return alkuX;
     }
 
-    
-    
-    public void setX0(int x0) {
-        this.x0 = x0;
+    public void setAlkuX(int alkuX) {
+        this.alkuX = alkuX;
     }
 
-    public int getY0() {
-        return y0;
+    public int getAlkuY() {
+        return alkuY;
     }
 
-    public void setY0(int y0) {
-        this.y0 = y0;
+    public void setAlkuY(int alkuY) {
+        this.alkuY = alkuY;
     }
 
     public Ammus getAmmus() {
@@ -113,16 +111,15 @@ public class Lentorata {
     public void iteroiRata() {
         Point uusiPiste = new Point();
         //r(t)=(x_0+v_0*x*t)i+(y_0+v_0y*t-½*g*t^2)j
-        //uusi t = t0+deltat
+        //uusi t = alkuAika+deltat
         //x
-        //System.out.println(this.x0+v0x*(this.t0+this.dt));
-        uusiPiste.x = (int) (this.x0+v0x*(this.t0+this.dt));
+        //System.out.println(this.alkuX+alkuNopeusX*(this.alkuAika+this.ajanMuutos));
+        uusiPiste.x = (int) (this.alkuX+alkuNopeusX*(this.alkuAika+this.ajanMuutos));
         //y
-        //System.out.println(this.y0+this.v0y*(this.t0+this.dt)-0.5*PUTOAMISKIIHTYVYYS*(this.t0+this.dt)*(this.t0+this.dt));
-        uusiPiste.y = (int) (this.y0+this.v0y*(this.t0+this.dt)-0.5*PUTOAMISKIIHTYVYYS*(this.t0+this.dt)*(this.t0+this.dt));
-        //System.out.println("Aika-askel: "+this.dt);
-        dt+=aikaAskel;
+        //System.out.println(this.alkuY+this.alkuNopeusY*(this.alkuAika+this.ajanMuutos)-0.5*putoamiskiihtyvyys*(this.alkuAika+this.ajanMuutos)*(this.alkuAika+this.ajanMuutos));
+        uusiPiste.y = (int) (this.alkuY+this.alkuNopeusY*(this.alkuAika+this.ajanMuutos)-0.5*putoamiskiihtyvyys*(this.alkuAika+this.ajanMuutos)*(this.alkuAika+this.ajanMuutos));
+        //System.out.println("Aika-askel: "+this.ajanMuutos);
+        ajanMuutos+=aikaAskel;
         this.ammus.setSijainti(uusiPiste);
-        this.maailma.lisaaObjekti(ammus);
     }
 }

@@ -44,7 +44,7 @@ public class TapahtumienKasittelija implements ActionListener{
                 peli.getPeliMaailma().tormaysTarkistus(rata.getAmmus(), peli.getPelaajat().get(1));
             else
                 peli.getPeliMaailma().tormaysTarkistus(rata.getAmmus(), peli.getPelaajat().get(0));
-	    
+	    peli.getPeliMaailma().lisaaObjekti(rata.getAmmus());
             pelialue.repaint();
         }
         this.peli.muutaVuoro();

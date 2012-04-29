@@ -36,25 +36,25 @@ public class LentorataTest {
     }
 
     /**
-     * Test of getPUTOAMISKIIHTYVYYS method, of class Lentorata.
+     * Test of getPutoamiskiihtyvyys method, of class Lentorata.
      */
     @Test
     public void testGetPUTOAMISKIIHTYVYYS() {
 	System.out.println("getPUTOAMISKIIHTYVYYS");
 	double expResult = 10.0; //TODO: static jutut selväksi
-	double result = Lentorata.getPUTOAMISKIIHTYVYYS();
+	double result = Lentorata.getPutoamiskiihtyvyys();
 	assertEquals(expResult, result, 0.0);
     }
 
     /**
-     * Test of setPUTOAMISKIIHTYVYYS method, of class Lentorata.
+     * Test of setPutoamiskiihtyvyys method, of class Lentorata.
      */
     @Test
     public void testSetPUTOAMISKIIHTYVYYS() {
 	System.out.println("setPUTOAMISKIIHTYVYYS");
 	double PUTOAMISKIIHTYVYYS = 0.0;
-	Lentorata.setPUTOAMISKIIHTYVYYS(PUTOAMISKIIHTYVYYS);
-	assertEquals(PUTOAMISKIIHTYVYYS, Lentorata.getPUTOAMISKIIHTYVYYS(), 0.0);
+	Lentorata.setPutoamiskiihtyvyys(PUTOAMISKIIHTYVYYS);
+	assertEquals(PUTOAMISKIIHTYVYYS, Lentorata.getPutoamiskiihtyvyys(), 0.0);
     }
 
     /**
@@ -80,7 +80,7 @@ public class LentorataTest {
     }
 
     /**
-     * Test of getDt method, of class Lentorata.
+     * Test of getAjanMuutos method, of class Lentorata.
      */
     @Test
     public void testGetDt() {
@@ -88,12 +88,12 @@ public class LentorataTest {
         Maailma testimaailma = new Maailma();
 	Lentorata instance = new Lentorata(testimaailma,0,0,0,0,0);
 	double expResult = 0.0;
-	double result = instance.getDt();
+	double result = instance.getAjanMuutos();
 	assertEquals(expResult, result, 0.0);
     }
 
     /**
-     * Test of setDt method, of class Lentorata.
+     * Test of setAjanMuutos method, of class Lentorata.
      */
     @Test
     public void testSetDt() {
@@ -101,8 +101,8 @@ public class LentorataTest {
 	int dt = 700;
         Maailma testimaailma = new Maailma();
 	Lentorata instance = new Lentorata(testimaailma,0,0,0,0,0);
-	instance.setDt(dt);
-	assertEquals(dt, instance.getDt(), 0.0);
+	instance.setAjanMuutos(dt);
+	assertEquals(dt, instance.getAjanMuutos(), 0.0);
     }
 
     /**
