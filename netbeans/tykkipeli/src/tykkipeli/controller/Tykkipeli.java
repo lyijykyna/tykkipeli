@@ -7,6 +7,7 @@ import java.util.Random;
 import tykkipeli.fysiikka.Lentorata;
 import tykkipeli.model.Ammus;
 import tykkipeli.model.Pelaaja;
+import tykkipeli.model.Tykki;
 
 /**
  *
@@ -28,6 +29,35 @@ public class Tykkipeli {
 //	this.pelaajienLukumaara = pelaajienLukumaara;
 //	this.pelaajat = new ArrayList<Pelaaja>();
 //    }
+    
+    
+    public void alusta() {
+        this.setPeliMaailma(new Maailma());
+	//System.out.println("Aloitetaan ohjelma");
+	//lisätään pelaajat
+	for(int i=0;i<2;i++) {
+	    this.lisaaPelaaja(new Pelaaja("Pelaaja"+(i+1)));
+	    //System.out.println("Lisättiin pelaaja "+this.getPelaajat().get(i).getNimi());
+	    this.getPelaajat().get(i).setTykki(new Tykki());
+	    //System.out.println("Lisättiin pelaajalle tykki");
+            this.getPeliMaailma().lisaaObjekti(this.getPelaajat().get(i).getTykki());
+	    //tykkipeli.arvoPelaajienPaikat();
+	    for(Pelaaja p : this.getPelaajat())
+		p.setSijainti(p.getSijainti().x, p.getSijainti().y);
+	    //System.out.println("Sijoitettiin pelaajan tykki pisteeseen"+this.getPelaajat().get(i).getTykki().getSijainti());
+	    //System.out.println("---------------------------------------------");
+	}
+	this.arvoPelaajienPaikat();
+        Pelaaja p1 = this.getPelaajat().get(0);
+        Pelaaja p2 = this.getPelaajat().get(1);
+        //System.out.println("Arvottiin pelaajien paikat. Uudet paikat tämän jälkeen:");
+        //System.out.println("Pelaaja1: "+p1.getSijainti());
+        //System.out.println("Pelaaja2: "+p2.getSijainti());
+	//System.out.println("Aloitetaan peli");
+	p1.setKoro(45);
+	p1.setTeho(10);
+        //System.out.println(this.getPelaajienLukumaara());
+    }
     
     public int getPelaajienLukumaara() {
 	return pelaajat.size();
@@ -81,8 +111,8 @@ public class Tykkipeli {
 	Point alkupsijainti = pelaaja.getTykki().getSijainti();
 	Ammus ammuttu = new Ammus(alkupsijainti);
 	Lentorata rata = new Lentorata(alkupsijainti.x, alkupsijainti.y, pelaaja.getTeho()*Math.cos(pelaaja.getKoroRadiaaneina()), pelaaja.getTeho()*Math.sin(pelaaja.getKoroRadiaaneina()), 0);
-	System.out.println("Ammutaan korolla "+ koro+"° ja teholla "+teho);
-	System.out.println("Ammutaan alkunopeudella: "+pelaaja.getTeho()*Math.cos(pelaaja.getKoroRadiaaneina())+"i + "+pelaaja.getTeho()*Math.sin(pelaaja.getKoroRadiaaneina())+"j");
+	//System.out.println("Ammutaan korolla "+ koro+"° ja teholla "+teho);
+	//System.out.println("Ammutaan alkunopeudella: "+pelaaja.getTeho()*Math.cos(pelaaja.getKoroRadiaaneina())+"i + "+pelaaja.getTeho()*Math.sin(pelaaja.getKoroRadiaaneina())+"j");
 	rata.setAmmus(ammuttu);
 	return rata;
     }
@@ -98,11 +128,11 @@ public class Tykkipeli {
     public void muutaVuoro() {
         if(this.vuoro < this.getPelaajienLukumaara()-1) {
             vuoro++;
-            System.out.println("Muutettiin vuoroa");
+            //System.out.println("Muutettiin vuoroa");
         }
         else {
             vuoro = 0;
-            System.out.println("Palautettiin vuoro ensimmäiselle pelaajalle");
+            //System.out.println("Palautettiin vuoro ensimmäiselle pelaajalle");
         }
     }
     

@@ -20,32 +20,7 @@ public class Main {
 	
         //TODO nämä johonkin olioon?
 	Tykkipeli tykkipeli = new Tykkipeli();
-	tykkipeli.setPeliMaailma(new Maailma());
-	System.out.println("Aloitetaan ohjelma");
-	//lisätään pelaajat
-	for(int i=0;i<2;i++) {
-	    tykkipeli.lisaaPelaaja(new Pelaaja("Pelaaja"+(i+1)));
-	    System.out.println("Lisättiin pelaaja "+tykkipeli.getPelaajat().get(i).getNimi());
-	    tykkipeli.getPelaajat().get(i).setTykki(new Tykki());
-	    System.out.println("Lisättiin pelaajalle tykki");
-            tykkipeli.getPeliMaailma().lisaaObjekti(tykkipeli.getPelaajat().get(i).getTykki());
-	    //tykkipeli.arvoPelaajienPaikat();
-	    for(Pelaaja p : tykkipeli.getPelaajat())
-		p.setSijainti(p.getSijainti().x, p.getSijainti().y);
-	    System.out.println("Sijoitettiin pelaajan tykki pisteeseen"+tykkipeli.getPelaajat().get(i).getTykki().getSijainti());
-	    System.out.println("---------------------------------------------");
-	}
-	tykkipeli.arvoPelaajienPaikat();
-        Pelaaja p1 = tykkipeli.getPelaajat().get(0);
-        Pelaaja p2 = tykkipeli.getPelaajat().get(1);
-        System.out.println("Arvottiin pelaajien paikat. Uudet paikat tämän jälkeen:");
-        System.out.println("Pelaaja1: "+p1.getSijainti());
-        System.out.println("Pelaaja2: "+p2.getSijainti());
-	System.out.println("Aloitetaan peli");
-	p1.setKoro(45);
-	p1.setTeho(10);
-        System.out.println(tykkipeli.getPelaajienLukumaara());
-        
+        tykkipeli.alusta();
         Ikkuna ikkuna = new Ikkuna(tykkipeli);
         SwingUtilities.invokeLater(ikkuna);
     }

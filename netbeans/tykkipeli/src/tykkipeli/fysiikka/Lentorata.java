@@ -1,7 +1,6 @@
 package tykkipeli.fysiikka;
 
 import java.awt.Point;
-import tykkipeli.controller.Maailma;
 import tykkipeli.model.Ammus;
 
 /**

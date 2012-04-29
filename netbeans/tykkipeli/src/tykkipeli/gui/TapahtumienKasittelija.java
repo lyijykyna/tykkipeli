@@ -6,6 +6,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import tykkipeli.controller.Tykkipeli;
 import tykkipeli.fysiikka.Lentorata;
+import tykkipeli.model.Ammus;
 import tykkipeli.model.Pelaaja;
 
 /**
@@ -32,11 +33,11 @@ public class TapahtumienKasittelija implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent ae) {
         Pelaaja vuorossa = peli.getVuorossaOlevaPelaaja();
-        System.out.println("Ammuttiin tykillä teholla "+this.teho.getText()+" ja korolla "+this.koro.getText());
+        //System.out.println("Ammuttiin tykillä teholla "+this.teho.getText()+" ja korolla "+this.koro.getText());
         vuorossa.setTeho(Double.parseDouble(teho.getText()));
         vuorossa.setKoro(Double.parseDouble(koro.getText()));
         Lentorata rata = peli.pelaajaAmpuu(vuorossa, vuorossa.getKoro(), vuorossa.getTeho());
-        //for(int i=0;i<10;i++) {
+        Ammus viimeisin = new Ammus();
 	while(rata.getAmmus().getSijainti().y >= 0) {
             rata.iteroiRata();
             //System.out.println(""+rata.getAmmus().getSijainti());
@@ -44,9 +45,11 @@ public class TapahtumienKasittelija implements ActionListener{
                 peli.getPeliMaailma().tormaysTarkistus(rata.getAmmus(), peli.getPelaajat().get(1));
             else
                 peli.getPeliMaailma().tormaysTarkistus(rata.getAmmus(), peli.getPelaajat().get(0));
-	    peli.getPeliMaailma().lisaaObjekti(rata.getAmmus());
+	    //peli.getPeliMaailma().lisaaObjekti(rata.getAmmus());
+            viimeisin = rata.getAmmus();
             pelialue.repaint();
         }
+        peli.getPeliMaailma().lisaaObjekti(viimeisin);
         this.peli.muutaVuoro();
         pelaaja.setText(peli.getVuorossaOlevaPelaaja().getNimi());
         teho.setText(""+peli.getVuorossaOlevaPelaaja().getTeho());
