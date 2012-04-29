@@ -17,7 +17,9 @@ public class Maailma {
     private int leveys = 640;
     private int korkeus = 480;
 
-    
+    /**
+     * Oletuskonstruktori Maailma-luokalle.
+     */
     public Maailma() {
 	objektit = new ArrayList();
     }
@@ -31,15 +33,27 @@ public class Maailma {
     }
 
     
-    //TODO: Geneerinen metodi?
+    /**
+     * Metodi PeliObjekti tyyppisen olion lisäämiseen Maailma-luokan objektilis-
+     * taan.
+     * @param lisattava PeliObjekti -tyyppinen olio. 
+     */
     public void lisaaObjekti(PeliObjekti lisattava) {
 	this.objektit.add(lisattava);
     }
     
+    /**
+     * Metodi Ammus tyyppisen olion lisäämiseen Maailma-luokan objektilistaan
+     * @param lisattava Ammus -tyyppinen olio.
+     */
     public void lisaaObjekti(Ammus lisattava) {
 	this.objektit.add(lisattava);
     }
     
+    /**
+     * Metodi Tykki tyyppisen olion lisäämiseen Maailma-luokan objektilistaan
+     * @param lisattava Tykki -tyyppinen olio.
+     */
     public void lisaaObjekti(Tykki lisattava) {
 	this.objektit.add(lisattava);
     }
@@ -60,6 +74,13 @@ public class Maailma {
 	this.leveys = leveys;
     }
     
+    /**
+     * Metodi kahden PeliObjekti tyyppisen olion sijaintien vertaamiseen
+     * @param o1 PeliObjekti -tyyppinen olio.
+     * @param o2 PeliObjekti -tyyppinen olio.
+     * @return true, jos etäisyys on alle 0.1
+     *         false, jos etäisyys on >= 0.1
+     */
     public boolean tormaysTarkistus(PeliObjekti o1, PeliObjekti o2) {
 	if(o1.getSijainti().distance(o2.getSijainti()) < 0.1) {
 	    //System.out.println("OSUMA!");
@@ -69,6 +90,14 @@ public class Maailma {
 	    return false;
     }
     
+    /**
+     * Metodi Ammus -tyyppisen ja Pelaaja -tyyppisen olioiden etäisyyden tarkas-
+     * telemiseen
+     * @param o1 Ammus -tyyppinen olio.
+     * @param o2 Pelaaja -tyyppinen olio.
+     * @return true, jos etäisyys on alle 10
+     *         false, jos etäisyys on >= 10
+     */
     public boolean tormaysTarkistus(Ammus o1, Pelaaja o2) {
 	if(o1.getSijainti().distance(o2.getSijainti()) < 10) {
 	    //System.out.println("OSUMA!");

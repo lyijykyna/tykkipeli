@@ -10,7 +10,9 @@ import tykkipeli.model.Pelaaja;
 import tykkipeli.model.Tykki;
 
 /**
- *
+ *Luokka, joka sisältää tiedot tykkipelin pelimaailmasta, pelaajista, pitää
+ * huolta vuoroista ja niiden vaihtamisesta (ja pitäisi pitää huolta myös pelin
+ * voittamisen selvittämisestä).
  * 
  */
 public class Tykkipeli {
@@ -20,17 +22,18 @@ public class Tykkipeli {
     private Maailma peliMaailma;
     private int vuoro;
 
+    /**
+     * Oletuskonstruktori Tykkipeli-luokalle.
+     */
     public Tykkipeli() {
 	this.pelaajat = new ArrayList<Pelaaja>();
         this.vuoro = 0;
     }
     
-//    public Tykkipeli(int pelaajienLukumaara) {
-//	this.pelaajienLukumaara = pelaajienLukumaara;
-//	this.pelaajat = new ArrayList<Pelaaja>();
-//    }
-    
-    
+    /**
+     * Metodi peli aloitukseen. Asettaa pelaajat pelimaailmaan ja lisää heille
+     * tykit.
+     */
     public void alusta() {
         this.setPeliMaailma(new Maailma());
 	//System.out.println("Aloitetaan ohjelma");
@@ -63,10 +66,6 @@ public class Tykkipeli {
 	return pelaajat.size();
     }
 
-    //poistetaan tämä, koska pelaajienLukumäärä riippuu vain taulukon koosta
-//    public void setPelaajienLukumaara(int pelaajienLukumaara) {
-//	this.pelaajienLukumaara = pelaajienLukumaara;
-//    }
     
     public List<Pelaaja> getPelaajat() {
 	return pelaajat;
@@ -84,10 +83,20 @@ public class Tykkipeli {
 	this.peliMaailma = peliMaailma;
     }
     
+    /**
+     * Lisää Pelaaja-tyyppisen olion Tykkipeli-luokan Pelaaja-listaan
+     * @param pelaaja Pelaaja tyyppinen olio.
+     */
     public void lisaaPelaaja(Pelaaja pelaaja) {
 	this.pelaajat.add(pelaaja);
     }
     
+    /**
+     * Metodi, jolla arvotaan pelaajien paikat pelimaailmassa. Metodi ottaa huo-
+     * mioon pelaajien lukumäärän ja pelimaailman rajat. Pelimaailma jaetaan pe-
+     * laajien lukumäärällä ja jokaiselle pelaajalle annetaan oma alue, johon
+     * heidän tykkinsä sijoitetaan.
+     */
     public void arvoPelaajienPaikat() {
 	int x = 0;
 	int y = 0;
@@ -105,6 +114,15 @@ public class Tykkipeli {
 	}
     }
     
+    /**
+     * Metodi, jota käytetään ampumistapahtumassa. Otetaan pelaajan antamat
+     * arvot korokulmalle ja teholle ja luodaan Lentorata näiden arvojen
+     * perusteella.
+     * @param pelaaja Pelaaja, joka ampuu
+     * @param koro pelaajan antama tykin korokulma
+     * @param teho pelaajan antama tykin ampumisteho
+     * @return Lentorata alkuarvojen mukaan.
+     */
     public Lentorata pelaajaAmpuu(Pelaaja pelaaja, double koro, double teho) {
 	pelaaja.setKoro(koro);
 	pelaaja.setTeho(teho);
@@ -125,6 +143,9 @@ public class Tykkipeli {
         this.vuoro = vuoro;
     }
     
+    /**
+     * Metodi, jolla vaihdetaan vuoroa.
+     */
     public void muutaVuoro() {
         if(this.vuoro < this.getPelaajienLukumaara()-1) {
             vuoro++;
